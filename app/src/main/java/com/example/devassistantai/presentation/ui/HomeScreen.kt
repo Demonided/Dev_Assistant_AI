@@ -27,7 +27,7 @@ fun HomeScreenContainer() {
         Text(
             text = "Я запустился",
             style = DevAssistantTheme.typography.primaryText,
-            color = Color.Blue
+            color = Color.Green
         )
     }
 }
