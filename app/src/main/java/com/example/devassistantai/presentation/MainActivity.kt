@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.example.devassistantai.presentation.navigation.DevAssistantScreen
 import com.example.devassistantai.presentation.navigation.Home
+import com.example.devassistantai.presentation.navigation.Theory
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 
 class MainActivity : ComponentActivity() {
@@ -28,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         Log.d("MyLog", "MainActivity: запустился")
                         DevAssistantScreen(
-                            startDestination = Home.route
+                            startDestination = Theory.route
                         )
                     }
                 }
