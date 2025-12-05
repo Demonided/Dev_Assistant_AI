@@ -46,6 +46,7 @@ android {
 dependencies {
     // Modules
     implementation(project(":core:ui-theme"))
+    implementation(project(":feature:theory"))
 
     // Android
     implementation(libs.androidx.core.ktx)
