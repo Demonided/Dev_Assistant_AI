@@ -1,36 +1,38 @@
 package com.example.base
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.cancel
+import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.update
 
-abstract class BaseViewModel<State: BaseViewState, Event: BaseEvent> {
-    val viewModelScope = CoroutineScope(SupervisorJob())
-
+abstract class BaseViewModel<State : BaseViewState, Event : BaseEvent> : ViewModel() {
     private val _state = MutableStateFlow(initialState())
-    val state = _state.asStateFlow()
+    val state: StateFlow<State> = _state.asStateFlow()
 
-    private val _events = Channel<Event>()
-    val event = _events.receiveAsFlow()
+    private val _events = Channel<Event>(Channel.BUFFERED)
+    val events: Flow<Event> = _events.receiveAsFlow()
 
-    fun updateState(block: State.() -> State) {
-        _state.value = block(_state.value)
+    protected fun updateState(update: State.() -> State) {
+        _state.update { it.update() }
     }
 
-    fun pushEvent(event: Event) {
-        viewModelScope.launch { _events.send(event)}
+    protected fun sendEvent(event: Event) {
+        _events.trySend(event)
     }
 
-    fun onDestroy() {
-        viewModelScope.cancel()
+    final override fun onCleared() {
+        super.onCleared() // viewModelScope отменяется автоматически
+        onClearedViewModel()
     }
 
-    open fun onCleared(){}
+    /**
+     * Optional: override if you need custom cleanup in subclasses.
+     */
+    protected open fun onClearedViewModel() {}
 
     abstract fun initialState(): State
 }
