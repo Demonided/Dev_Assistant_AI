@@ -1,17 +1,15 @@
 package com.example.theory
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.ui_theme.ui.theme.DevAssistantTheme
+import com.example.theory.composable.HeaderComponent
 
 @Composable
 fun TheoryScreen() {
@@ -20,18 +18,11 @@ fun TheoryScreen() {
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Top,
         modifier = Modifier
             .fillMaxSize()
     ) {
-        Text(
-            text = state.screenName,
-            style = DevAssistantTheme.typography.primaryText
-        )
-        Text(
-            text = "Hello",
-            style = DevAssistantTheme.typography.primaryText,
-        )
+        HeaderComponent()
     }
 }
 
