@@ -19,7 +19,6 @@ object DevAssistantTheme {
         get() = LocalDevAssistantTypography.current
 }
 
-
 @Composable
 fun DevAssistantAITheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

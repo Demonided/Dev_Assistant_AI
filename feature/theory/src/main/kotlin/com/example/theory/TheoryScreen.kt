@@ -23,6 +23,7 @@ fun TheoryScreen() {
         verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxSize()
+            .background(DevAssistantTheme.colors.bottomBarDashboard.backgroundBottomBar)
     ) {
         Text(
             text = state.screenName,

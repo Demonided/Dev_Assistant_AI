@@ -46,6 +46,14 @@ android {
 dependencies {
     // Modules
     implementation(project(":core:ui-theme"))
+    implementation(project(":core:ai-sdk"))
+    implementation(project(":core:common"))
+    implementation(project(":data:user"))
+    implementation(project(":feature:ai-chat"))
+    implementation(project(":feature:base"))
+    implementation(project(":feature:profile"))
+    implementation(project(":feature:quiz"))
+    implementation(project(":feature:settings"))
     implementation(project(":feature:theory"))
 
     // Android
