@@ -1,6 +1,6 @@
 package com.example.theory
 
-import com.example.base.viewmodel.BaseViewModel
+import com.example.com.example.devassistantai.viewmodel.BaseViewModel
 
 class TheoryViewModel: BaseViewModel<TheoryContract.State, Nothing>() {
 

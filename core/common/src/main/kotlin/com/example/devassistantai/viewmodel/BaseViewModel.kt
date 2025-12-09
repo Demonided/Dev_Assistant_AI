@@ -1,4 +1,4 @@
-package com.example.base.viewmodel
+package com.example.com.example.devassistantai.viewmodel
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.channels.Channel
