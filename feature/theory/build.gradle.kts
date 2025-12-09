@@ -38,8 +38,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:common"))
-    implementation(project(":core:ui-theme"))
+    implementation(projects.core.common)
+    implementation(projects.core.uiTheme)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
