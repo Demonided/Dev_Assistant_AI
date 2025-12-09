@@ -3,19 +3,23 @@ package com.example.devassistantai.presentation.navigation
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
+import com.example.ai_chat.ChatAIScreen
 import com.example.devassistantai.presentation.ui.HomeScreenContainer
+import com.example.profile.ProfileScreen
+import com.example.settings.SettingsScreen
+import com.example.tests.QuizScreen
+import com.example.theory.TheoryScreen
 import com.example.theory.subject.TheoryScreen
 
 @Composable
 fun DevAssistantNavHost(
     startDestination: String,
+    navController: NavHostController,
     modifier: Modifier = Modifier,
 ) {
-    val navController = rememberNavController()
-
     NavHost(
         navController = navController,
         startDestination = startDestination,
@@ -25,19 +29,19 @@ fun DevAssistantNavHost(
             HomeScreenContainer()
         }
         composable(route = ChatAI.route) {
-
+            ChatAIScreen()
         }
         composable(route = Theory.route) {
             TheoryScreen()
         }
         composable(route = Quiz.route) {
-
+            QuizScreen()
         }
-        composable(route = User.route) {
-
+        composable(route = Profile.route) {
+            ProfileScreen()
         }
         composable(route = Settings.route) {
-
+            SettingsScreen()
         }
     }
 }

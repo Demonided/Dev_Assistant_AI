@@ -1,0 +1,18 @@
+check_build:
+  stage: build
+  image: cimg/android:2023.09
+  tags:
+    - host
+  only:
+    - merge_requests
+    - main
+    - develop
+  script:
+    - echo "Running detekt"
+    - ./gradlew --no-daemon detekt
+    - echo "Running assemble"
+    - ./gradlew --no-daemon assembleDebug --info
+  artifacts:
+    paths:
+      - build/reports/detekt.html
+      - build/reports/detekt.txt
