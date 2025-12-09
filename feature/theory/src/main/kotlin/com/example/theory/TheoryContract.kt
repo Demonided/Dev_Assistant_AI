@@ -1,6 +1,6 @@
 package com.example.theory
 
-import com.example.base.BaseViewState
+import com.example.base.viewmodel.BaseViewState
 
 object TheoryContract {
 
