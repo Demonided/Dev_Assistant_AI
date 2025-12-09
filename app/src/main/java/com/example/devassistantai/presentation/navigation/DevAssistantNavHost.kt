@@ -11,7 +11,6 @@ import com.example.devassistantai.presentation.ui.HomeScreenContainer
 import com.example.profile.ProfileScreen
 import com.example.settings.SettingsScreen
 import com.example.tests.QuizScreen
-import com.example.theory.TheoryScreen
 import com.example.theory.subject.TheoryScreen
 
 @Composable
