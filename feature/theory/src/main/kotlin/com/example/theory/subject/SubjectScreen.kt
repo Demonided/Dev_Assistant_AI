@@ -1,4 +1,4 @@
-package com.example.theory
+package com.example.theory.subject
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -9,11 +9,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.theory.composable.HeaderComponent
+import com.example.theory.common.HeaderComponent
+import com.example.theory.subject.composable.SubjectsComponent
 
 @Composable
 fun TheoryScreen() {
-    val viewModel = TheoryViewModel()
+    val viewModel = SubjectViewModel()
     val state by viewModel.state.collectAsState()
 
     Column(
@@ -23,6 +24,7 @@ fun TheoryScreen() {
             .fillMaxSize()
     ) {
         HeaderComponent()
+        SubjectsComponent(state.subjects)
     }
 }
 

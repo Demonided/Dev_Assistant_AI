@@ -7,8 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.devassistantai.presentation.ui.HomeScreenContainer
-import com.example.theory.TheoryScreen
-import com.example.theory.TheoryViewModel
+import com.example.theory.subject.TheoryScreen
 
 @Composable
 fun DevAssistantNavHost(

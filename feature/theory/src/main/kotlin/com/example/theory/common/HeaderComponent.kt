@@ -1,4 +1,4 @@
-package com.example.theory.composable
+package com.example.theory.common
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
