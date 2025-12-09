@@ -20,10 +20,13 @@ object Quiz : DevAssistantDestination {
     override val route = "quiz"
 }
 
-object User : DevAssistantDestination {
-    override val route = "user"
-}
-
 object Settings : DevAssistantDestination {
     override val route = "settings"
 }
+
+object Profile : DevAssistantDestination {
+    override val route = "profile"
+}
+
+val devAssistantBottomTabRowScreens =
+    listOf(Theory.route, Quiz.route, ChatAI.route, Profile.route, Settings.route)

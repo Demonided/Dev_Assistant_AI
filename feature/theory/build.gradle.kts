@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation(project(":feature:base"))
     implementation(project(":core:ui-theme"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
