@@ -5,10 +5,11 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.ui.graphics.Color
 import com.example.com.example.devassistantai.viewmodel.BaseViewModel
 import com.example.theory.subject.data.SubjectData
+import com.example.theory.subject.data.SubjectState
 
-class SubjectViewModel : BaseViewModel<SubjectContract.State, Nothing>() {
+class SubjectViewModel : BaseViewModel<SubjectState, Nothing>() {
 
-    override fun initialState(): SubjectContract.State = SubjectContract.State.DEFAULT
+    override fun initialState(): SubjectState = SubjectState.DEFAULT
 
     init {
         val subjects = listOf(
