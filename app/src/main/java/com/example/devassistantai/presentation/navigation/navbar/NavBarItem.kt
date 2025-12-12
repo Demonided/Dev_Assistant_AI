@@ -67,8 +67,8 @@ fun NavBarItems(
                         brush = Brush.linearGradient(
                             colors =
                                 listOf(
-                                    DevAssistantTheme.colors.bottomBarDashboard.gradientStartEnableIcon,
-                                    DevAssistantTheme.colors.bottomBarDashboard.gradientEndEnableIcon
+                                    DevAssistantTheme.colors.appStartGradient,
+                                    DevAssistantTheme.colors.appEndGradient
                                 ),
                             start = Offset(0f, 0f),
                             end = Offset(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
