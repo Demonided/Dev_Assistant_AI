@@ -16,13 +16,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusChanged
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
+import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
 fun AppSearchField(
@@ -30,8 +30,8 @@ fun AppSearchField(
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val backgroundColor = Color.White.copy(alpha = 0.15f)
-    val focusedBackgroundColor = Color.White.copy(alpha = 0.22f)
+    val backgroundColor = DevAssistantTheme.colors.white.copy(alpha = 0.15f)
+    val focusedBackgroundColor = DevAssistantTheme.colors.white.copy(alpha = 0.22f)
     var isFocused by remember { mutableStateOf(false) }
 
     Box(
@@ -50,11 +50,11 @@ fun AppSearchField(
             onValueChange = onValueChange,
             singleLine = true,
             textStyle = TextStyle(
-                color = Color.White,
+                color = DevAssistantTheme.colors.white,
                 fontSize = 14.sp,
                 lineHeight = 42.sp
             ),
-            cursorBrush = SolidColor(Color.White),
+            cursorBrush = SolidColor(DevAssistantTheme.colors.white),
             modifier = Modifier
                 .fillMaxWidth()
                 .onFocusChanged { isFocused = it.isFocused }
@@ -63,7 +63,7 @@ fun AppSearchField(
         if (value.isEmpty()) {
             Text(
                 text = "Search...",
-                color = Color.White.copy(alpha = 0.6f),
+                color = DevAssistantTheme.colors.white.copy(alpha = 0.6f),
                 fontSize = 14.sp,
                 modifier = Modifier.align(Alignment.CenterStart)
             )

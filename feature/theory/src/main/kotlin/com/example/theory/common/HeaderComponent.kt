@@ -1,6 +1,5 @@
 package com.example.theory.common
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,31 +8,26 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.theory.extantion.angleLinearGradient
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
 fun HeaderComponent() {
-
-    val gradient = Brush.linearGradient(
-        colors = listOf(
-            DevAssistantTheme.colors.appStartGradient,
-            DevAssistantTheme.colors.appEndGradient
-        ),
-        start = Offset(0f, 0f),
-        end = Offset.Infinite
-    )
-
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .height(135.dp)
-            .background(gradient)
+            .angleLinearGradient(
+                colors = listOf(
+                    DevAssistantTheme.colors.appStartGradient,
+                    DevAssistantTheme.colors.appEndGradient
+                ),
+                angle = 60f
+            )
             .padding(start = 20.dp, end = 20.dp)
 
     ) {
@@ -44,13 +38,13 @@ fun HeaderComponent() {
         )
         Text(
             text = "Select topic",
-            color = DevAssistantTheme.colors.textTitle,
+            color = DevAssistantTheme.colors.white,
             fontSize = 12.sp,
             modifier = Modifier.padding(bottom = 10.dp)
         )
         Text(
             text = "Start your preparation for interview",
-            color = DevAssistantTheme.colors.textTitle,
+            color = DevAssistantTheme.colors.white,
             fontSize = 12.sp,
             modifier = Modifier.padding(bottom = 15.dp)
         )

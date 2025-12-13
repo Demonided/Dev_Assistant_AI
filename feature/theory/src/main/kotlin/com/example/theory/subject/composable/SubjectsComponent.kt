@@ -1,8 +1,9 @@
 package com.example.theory.subject.composable
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -10,13 +11,17 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.theory.R
+import com.example.theory.subject.data.Statistics
 import com.example.theory.subject.data.SubjectData
+import com.example.theory.subject.data.SubjectItem
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 
 @Composable
-fun SubjectsComponent(subjects: List<SubjectData>) {
+fun SubjectsComponent(subjects: SubjectData) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
@@ -26,7 +31,7 @@ fun SubjectsComponent(subjects: List<SubjectData>) {
             SubjectCardItem(
                 icon = subject.icon,
                 title = subject.title,
-                subtitle = "${subject.questionCount} вопросов",
+                subtitle = "${subject.questionCount} ${stringResource(R.string.questions)}",
                 progress = subject.progress,
                 colors = subject.colors,
                 onClick = { /* обработка клика */ }
@@ -37,10 +42,11 @@ fun SubjectsComponent(subjects: List<SubjectData>) {
 
 @Composable
 @Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun SubjectsComponentPreview() {
     DevAssistantAITheme {
         val subjects = listOf(
-            SubjectData(
+            SubjectItem(
                 icon = Icons.Default.Favorite,
                 title = "Android Framework",
                 questionCount = 230,
@@ -50,7 +56,7 @@ fun SubjectsComponentPreview() {
                     Color(0xFF0D5D1F)
                 )
             ),
-            SubjectData(
+            SubjectItem(
                 icon = Icons.Default.Favorite,
                 title = "Kotlin",
                 questionCount = 180,
@@ -60,7 +66,7 @@ fun SubjectsComponentPreview() {
                     Color(0xFF0D2E5D)
                 )
             ),
-            SubjectData(
+            SubjectItem(
                 icon = Icons.Default.Favorite,
                 title = "Architecture",
                 questionCount = 120,

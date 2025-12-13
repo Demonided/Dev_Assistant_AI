@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.theory.common.HeaderComponent
 import com.example.theory.subject.composable.SubjectsComponent
+import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
@@ -24,15 +25,18 @@ fun TheoryScreen() {
         verticalArrangement = Arrangement.Top,
         modifier = Modifier
             .fillMaxSize()
-            .background(DevAssistantTheme.colors.bottomBarDashboard.backgroundBottomBar)
+            .background(DevAssistantTheme.colors.bottomBarDashboard.bottomBarBackground)
     ) {
         HeaderComponent()
         SubjectsComponent(state.subjects)
+
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview() {
-    TheoryScreen()
+    DevAssistantAITheme {
+        TheoryScreen()
+    }
 }
