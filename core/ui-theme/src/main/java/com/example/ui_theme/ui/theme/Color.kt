@@ -2,49 +2,87 @@ package com.example.ui_theme.ui.theme
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
-import com.example.ui_theme.ui.theme.DevAssistantColor.BottomBarDashboard
+import com.example.ui_theme.ui.theme.DevAssistantColor.BottomBarDashboardColor
 
-val LightDevAssistantColor = DevAssistantColor(
-    textTitle = Color(0xFFFFFFFF),
-    appStartGradient = Color(0xFF5320D1),
-    appEndGradient = Color(0xFFC24A1B),
+val LightDevAssistantColorScheme = DevAssistantColor(
+    white = Color(0xFFFFFFFF),
+    textTitle = Color(0xFF000000),
+    appStartGradient = Color(0xFFB649F3),
+    appEndGradient = Color(0xFFFF6500),
+    appBackground = Color(0xFFFFFFFF),
 
-    bottomBarDashboard = BottomBarDashboard(
-        backgroundBottomBar = Color(0xFFE9E9EC),
-        colorEnableIcon = Color(0xFFFFFFFF),
-        colorDisableIcon = Color(0xFF2A2A2A),
-        externalCircleEnableIcon = Color(0xFFE0E1E4),
-        borderBottomBar = Color(0xFFCCCCCC)
+    bottomBarDashboard = BottomBarDashboardColor(
+        bottomBarBackground = Color(0xFFE9E9EC),
+        enabledIcon = Color(0xFFFFFFFF),
+        disabledIcon = Color(0xFF2A2A2A),
+        enabledExternalCircleIcon = Color(0xFFE0E1E4),
+        bottomBarBorder = Color(0xFFCCCCCC)
+    ),
+
+    statisticCard = DevAssistantColor.StatisticCardColor(
+        border = Color(0xFFD1BFF1),
+        numberOfLearned = Color(0xFFAD46FF),
+        progressPercent = Color(0xFFF6339A),
+        streakNumber = Color(0xFFFF6900),
+        gradientStart = Color(0xFFF6F0FF),
+        gradientEnd = Color(0xFFEFF3FF),
+        description = Color(0XFF151821)
     )
 )
 
-val DarkDevAssistantColor = DevAssistantColor(
-    textTitle = Color(0xFF000000),
-    appStartGradient = Color(0xFF5220D1),
-    appEndGradient = Color(0xFFA03D1B),
+val DarkDevAssistantColorScheme = DevAssistantColor(
+    white = Color(0xFFFFFFFF),
+    textTitle = Color(0xFFFFFFFF),
+    appStartGradient = Color(0xFFB649F3),
+    appEndGradient = Color(0xFFFF6500),
+    appBackground = Color(0xFF020205),
 
-    bottomBarDashboard = BottomBarDashboard(
-        backgroundBottomBar = Color(0xFF121315),
-        colorEnableIcon = Color(0xFFFFFFFF),
-        colorDisableIcon = Color(0xFF8A8A8A),
-        externalCircleEnableIcon = Color(0xFF1E1F22),
-        borderBottomBar = Color(0xFF626161)
+    bottomBarDashboard = BottomBarDashboardColor(
+        bottomBarBackground = Color(0xFF121315),
+        enabledIcon = Color(0xFFFFFFFF),
+        disabledIcon = Color(0xFF8A8A8A),
+        enabledExternalCircleIcon = Color(0xFF1E1F22),
+        bottomBarBorder = Color(0xFF626161)
+    ),
+
+    statisticCard = DevAssistantColor.StatisticCardColor(
+        border = Color(0xFF0B051B),
+        numberOfLearned = Color(0xFFAD46FF),
+        progressPercent = Color(0xFFF6339A),
+        streakNumber = Color(0xFFFF6900),
+        gradientStart = Color(0xFF5220D1),
+        gradientEnd = Color(0xFFA03D1B),
+        description = Color(0XFF545868)
     )
 )
 
 data class DevAssistantColor(
+    val white: Color,
     val textTitle: Color,
     val appStartGradient: Color,
     val appEndGradient: Color,
+    val appBackground: Color,
 
-    val bottomBarDashboard: BottomBarDashboard
+    val bottomBarDashboard: BottomBarDashboardColor,
+    val statisticCard: StatisticCardColor
 ) {
     @Immutable
-    data class BottomBarDashboard(
-        val backgroundBottomBar: Color,
-        val colorEnableIcon: Color,
-        val colorDisableIcon: Color,
-        val externalCircleEnableIcon: Color,
-        val borderBottomBar: Color
+    data class BottomBarDashboardColor(
+        val bottomBarBackground: Color,
+        val enabledIcon: Color,
+        val disabledIcon: Color,
+        val enabledExternalCircleIcon: Color,
+        val bottomBarBorder: Color
+    )
+
+    @Immutable
+    data class StatisticCardColor(
+        val border: Color,
+        val numberOfLearned: Color,
+        val progressPercent: Color,
+        val streakNumber: Color,
+        val gradientStart: Color,
+        val gradientEnd: Color,
+        val description: Color
     )
 }
