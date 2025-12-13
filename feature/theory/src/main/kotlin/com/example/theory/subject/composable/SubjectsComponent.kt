@@ -23,11 +23,11 @@ import com.example.ui_theme.ui.theme.DevAssistantAITheme
 @Composable
 fun SubjectsComponent(subjects: SubjectData) {
     LazyColumn(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        items(subjects) { subject ->
+        items(subjects.subjectItems) { subject ->
             SubjectCardItem(
                 icon = subject.icon,
                 title = subject.title,
@@ -36,6 +36,15 @@ fun SubjectsComponent(subjects: SubjectData) {
                 colors = subject.colors,
                 onClick = { /* обработка клика */ }
             )
+        }
+        item {
+            with(subjects.statistics) {
+                StatisticsCard(
+                    learned = learned,
+                    progress = progress,
+                    streak = streak
+                )
+            }
         }
     }
 }
@@ -76,7 +85,10 @@ fun SubjectsComponentPreview() {
                     Color(0xFF971919)
                 )
             )
+
         )
-        SubjectsComponent(subjects)
+
+        val statistics = Statistics(243, 67, 12)
+        SubjectsComponent(SubjectData(subjectItems = subjects, statistics = statistics))
     }
 }

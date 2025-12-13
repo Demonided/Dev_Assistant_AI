@@ -4,7 +4,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.ui.graphics.Color
 import com.example.com.example.devassistantai.viewmodel.BaseViewModel
+import com.example.theory.subject.data.Statistics
 import com.example.theory.subject.data.SubjectData
+import com.example.theory.subject.data.SubjectItem
 import com.example.theory.subject.data.SubjectState
 
 class SubjectViewModel : BaseViewModel<SubjectState, Nothing>() {
@@ -13,7 +15,7 @@ class SubjectViewModel : BaseViewModel<SubjectState, Nothing>() {
 
     init {
         val subjects = listOf(
-            SubjectData(
+            SubjectItem(
                 icon = Icons.Default.Favorite,
                 title = "Android Framework",
                 questionCount = 230,
@@ -23,7 +25,7 @@ class SubjectViewModel : BaseViewModel<SubjectState, Nothing>() {
                     Color(0xFF0D5D1F)
                 )
             ),
-            SubjectData(
+            SubjectItem(
                 icon = Icons.Default.Favorite,
                 title = "Kotlin",
                 questionCount = 180,
@@ -33,7 +35,47 @@ class SubjectViewModel : BaseViewModel<SubjectState, Nothing>() {
                     Color(0xFF0D2E5D)
                 )
             ),
-            SubjectData(
+            SubjectItem(
+                icon = Icons.Default.Favorite,
+                title = "Architecture",
+                questionCount = 120,
+                progress = 0.8f,
+                colors = listOf(
+                    Color(0xFFC63131),
+                    Color(0xFF971919)
+                )
+            ),
+            SubjectItem(
+                icon = Icons.Default.Favorite,
+                title = "Kotlin",
+                questionCount = 180,
+                progress = 0.3f,
+                colors = listOf(
+                    Color(0xFF1E4B7C),
+                    Color(0xFF0D2E5D)
+                )
+            ),
+            SubjectItem(
+                icon = Icons.Default.Favorite,
+                title = "Architecture",
+                questionCount = 120,
+                progress = 0.8f,
+                colors = listOf(
+                    Color(0xFFC63131),
+                    Color(0xFF971919)
+                )
+            ),
+            SubjectItem(
+                icon = Icons.Default.Favorite,
+                title = "Kotlin",
+                questionCount = 180,
+                progress = 0.3f,
+                colors = listOf(
+                    Color(0xFF1E4B7C),
+                    Color(0xFF0D2E5D)
+                )
+            ),
+            SubjectItem(
                 icon = Icons.Default.Favorite,
                 title = "Architecture",
                 questionCount = 120,
@@ -45,8 +87,10 @@ class SubjectViewModel : BaseViewModel<SubjectState, Nothing>() {
             )
         )
 
+        val statistics = Statistics(243, 67, 12)
+
         updateState {
-            copy(subjects = subjects)
+            copy(subjects = SubjectData(subjectItems = subjects, statistics = statistics))
         }
     }
 }

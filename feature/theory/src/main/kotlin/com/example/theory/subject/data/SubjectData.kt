@@ -1,12 +1,13 @@
 package com.example.theory.subject.data
 
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
-
 data class SubjectData(
-    val icon: ImageVector,
-    val title: String,
-    val questionCount: Int,
-    val progress: Float,
-    val colors: List<Color>,
-)
+    var subjectItems: List<SubjectItem>,
+    val statistics: Statistics
+) {
+    companion object {
+        val EMPTY = SubjectData(
+            subjectItems = emptyList(),
+            statistics = Statistics(0, 0, 0)
+        )
+    }
+}
