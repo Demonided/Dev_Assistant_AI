@@ -40,7 +40,7 @@ fun CustomNavBar(
             modifier = modifier
                 .fillMaxWidth()
                 .height(80.dp)
-                .background(DevAssistantTheme.colors.bottomBarDashboard.bottomBarBackground),
+                .background(DevAssistantTheme.colors.appBackground),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {

@@ -25,9 +25,14 @@ val LightDevAssistantColorScheme = DevAssistantColor(
         numberOfLearned = Color(0xFFAD46FF),
         progressPercent = Color(0xFFF6339A),
         streakNumber = Color(0xFFFF6900),
-        gradientStart = Color(0xFFF6F0FF),
-        gradientEnd = Color(0xFFEFF3FF),
         description = Color(0XFF151821)
+    ),
+
+    appCardColor = DevAssistantColor.AppCardColor(
+        background = Color(0XFFFFFFFF),
+        border = Color(0xFFEBE6E7),
+        title = Color(0xFF101828),
+        text = Color(0xFF4A5565)
     )
 )
 
@@ -48,13 +53,18 @@ val DarkDevAssistantColorScheme = DevAssistantColor(
     ),
 
     statisticCard = DevAssistantColor.StatisticCardColor(
-        border = Color(0xFF0B051B),
+        border = Color(0xFFAD46FF),
         numberOfLearned = Color(0xFFAD46FF),
         progressPercent = Color(0xFFF6339A),
         streakNumber = Color(0xFFFF6900),
-        gradientStart = Color(0x1AAD46FF),
-        gradientEnd = Color(0x1AF6339A),
-        description = Color(0XFF545868)
+        description = Color(0X1A545868)
+    ),
+
+    appCardColor = DevAssistantColor.AppCardColor(
+        background = Color(0XFF182B3A),
+        border = Color(0XFF364153),
+        title = Color(0xFFFFFFFF),
+        text = Color(0xFF99A1AF)
     )
 )
 
@@ -67,7 +77,8 @@ data class DevAssistantColor(
     val appBackground: Color,
 
     val bottomBarDashboard: BottomBarDashboardColor,
-    val statisticCard: StatisticCardColor
+    val statisticCard: StatisticCardColor,
+    val appCardColor: AppCardColor
 ) {
     @Immutable
     data class BottomBarDashboardColor(
@@ -84,8 +95,14 @@ data class DevAssistantColor(
         val numberOfLearned: Color,
         val progressPercent: Color,
         val streakNumber: Color,
-        val gradientStart: Color,
-        val gradientEnd: Color,
         val description: Color
+    )
+
+    @Immutable
+    data class AppCardColor(
+        val background: Color,
+        val border: Color,
+        val title: Color,
+        val text: Color
     )
 }

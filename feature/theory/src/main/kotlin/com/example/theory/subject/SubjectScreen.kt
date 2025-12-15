@@ -25,7 +25,7 @@ fun TheoryScreen() {
         verticalArrangement = Arrangement.Top,
         modifier = Modifier
             .fillMaxSize()
-            .background(DevAssistantTheme.colors.bottomBarDashboard.bottomBarBackground)
+            .background(DevAssistantTheme.colors.appBackground)
     ) {
         HeaderComponent()
         SubjectsComponent(state.subjects)
