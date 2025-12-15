@@ -1,5 +1,6 @@
 package com.example.theory.subject.composable
 
+import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -33,6 +34,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
+import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 
 @Composable
@@ -48,15 +50,16 @@ fun SubjectCardItem(
     Card(
         modifier = modifier
             .fillMaxWidth()
+
             .border(
                 width = 1.dp,
-                color = Color(0xFFE0E0E0),
+                color = DevAssistantTheme.colors.appCardColor.border,
                 shape = RoundedCornerShape(24.dp)
             )
             .clip(RoundedCornerShape(24.dp))
             .clickable(onClick = onClick),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = DevAssistantTheme.colors.appCardColor.background
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 4.dp
@@ -72,7 +75,6 @@ fun SubjectCardItem(
                 modifier = Modifier.fillMaxWidth()
             ) {
 
-                // Иконка на зелёном фоне
                 Box(
                     modifier = Modifier
                         .size(56.dp)
@@ -99,25 +101,27 @@ fun SubjectCardItem(
                         text = title,
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Medium,
-                        color = Color.Black
+                        color = DevAssistantTheme.colors.appCardColor.title
                     )
+                    Spacer(modifier = Modifier
+                        .fillMaxWidth()
+                        .height(10.dp))
                     Text(
                         text = subtitle,
                         fontSize = 14.sp,
-                        color = Color.Gray
+                        color = DevAssistantTheme.colors.appCardColor.text
                     )
                 }
 
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                     contentDescription = null,
-                    tint = Color.Black.copy(alpha = 0.8f)
+                    tint = DevAssistantTheme.colors.appCardColor.text
                 )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Прогресс-бар
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -141,17 +145,24 @@ fun SubjectCardItem(
 
 @Composable
 @Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun TheoryCardItemPreview() {
     DevAssistantAITheme {
-        SubjectCardItem(
-            icon = Icons.Default.Home,
-            title = "Android Framework",
-            subtitle = "230 вопросов",
-            progress = 0.55f,
-            colors = listOf(
-                Color(0xFF1E7C2F),
-                Color(0xFF0D5D1F)
+        Box(
+            modifier = Modifier
+                .background(color = DevAssistantTheme.colors.appBackground)
+                .padding(10.dp)
+        ) {
+            SubjectCardItem(
+                icon = Icons.Default.Home,
+                title = "Android Framework",
+                subtitle = "230 вопросов",
+                progress = 0.55f,
+                colors = listOf(
+                    Color(0xFF1E7C2F),
+                    Color(0xFF0D5D1F)
+                )
             )
-        )
+        }
     }
 }
