@@ -24,6 +24,7 @@ fun HeaderComponent() {
             .angleLinearGradient(
                 colors = listOf(
                     DevAssistantTheme.colors.appStartGradient,
+                    DevAssistantTheme.colors.appMediumGradientColor,
                     DevAssistantTheme.colors.appEndGradient
                 ),
                 angle = 60f

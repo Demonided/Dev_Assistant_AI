@@ -8,7 +8,8 @@ val LightDevAssistantColorScheme = DevAssistantColor(
     white = Color(0xFFFFFFFF),
     textTitle = Color(0xFF000000),
     appStartGradient = Color(0xFFB649F3),
-    appEndGradient = Color(0xFFFF6500),
+    appMediumGradientColor = Color(0xFFF6339A),
+    appEndGradient = Color(0xFFFF6900),
     appBackground = Color(0xFFFFFFFF),
 
     bottomBarDashboard = BottomBarDashboardColor(
@@ -34,6 +35,7 @@ val DarkDevAssistantColorScheme = DevAssistantColor(
     white = Color(0xFFFFFFFF),
     textTitle = Color(0xFFFFFFFF),
     appStartGradient = Color(0xFFB649F3),
+    appMediumGradientColor = Color(0xFFF6339A),
     appEndGradient = Color(0xFFFF6500),
     appBackground = Color(0xFF101828),
 
@@ -50,8 +52,8 @@ val DarkDevAssistantColorScheme = DevAssistantColor(
         numberOfLearned = Color(0xFFAD46FF),
         progressPercent = Color(0xFFF6339A),
         streakNumber = Color(0xFFFF6900),
-        gradientStart = Color(0xFF5220D1),
-        gradientEnd = Color(0xFFA03D1B),
+        gradientStart = Color(0x1AAD46FF),
+        gradientEnd = Color(0x1AF6339A),
         description = Color(0XFF545868)
     )
 )
@@ -60,6 +62,7 @@ data class DevAssistantColor(
     val white: Color,
     val textTitle: Color,
     val appStartGradient: Color,
+    val appMediumGradientColor: Color,
     val appEndGradient: Color,
     val appBackground: Color,
 
