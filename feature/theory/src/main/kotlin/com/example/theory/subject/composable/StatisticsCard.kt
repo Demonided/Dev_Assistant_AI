@@ -41,8 +41,8 @@ fun StatisticsCard(
             .clip(RoundedCornerShape(24.dp))
             .angleLinearGradient(
                 colors = listOf(
-                    DevAssistantTheme.colors.statisticCard.gradientStart,
-                    DevAssistantTheme.colors.statisticCard.gradientEnd
+                    DevAssistantTheme.colors.appStartGradient.copy(alpha = 0.3f),
+                    DevAssistantTheme.colors.appMediumGradientColor.copy(alpha = 0.3f)
                 ), angle = 60f
             )
             .border(
