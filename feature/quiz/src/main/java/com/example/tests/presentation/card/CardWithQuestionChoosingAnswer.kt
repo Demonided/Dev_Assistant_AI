@@ -6,7 +6,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.tests.domain.model.QuestionWitchAnswer
-import com.example.ui_theme.component.SelectedAnswerOption
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 
 @Composable
@@ -23,6 +22,7 @@ fun CardWithQuestionChoosingAnswer(
             SelectedAnswerOption(
                 isSelected = isSelected == index,
                 answerOption = "ssa",
+                correctedAnswerOption = "da",
                 questionNumber = "da",
                 modifier = Modifier
             )

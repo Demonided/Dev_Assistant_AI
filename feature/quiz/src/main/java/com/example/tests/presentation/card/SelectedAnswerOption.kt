@@ -1,8 +1,9 @@
-package com.example.ui_theme.component
+package com.example.tests.presentation.card
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,17 +25,18 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 fun SelectedAnswerOption(
     isSelected: Boolean,
     answerOption: String,
+    correctedAnswerOption: String,
     questionNumber: String,
     modifier: Modifier = Modifier,
 ) {
     Card(
-        border = BorderStroke(1.dp, Color.Green),
+        border = if (isSelected) BorderStroke(2.dp, Color.Blue) else BorderStroke(1.dp, Color.Green),
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 4.dp)
     ) {
         Row(
-//            horizontalArrangement = Arrangement.Center,
+            horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .padding(12.dp)
@@ -76,7 +78,8 @@ fun SelectedAnswerOptionPreview() {
     DevAssistantAITheme {
         SelectedAnswerOption(
             isSelected = false,
-            answerOption = "Component for displaying UI",
+            answerOption = "Component for displaying UI decomposed into smaller parts",
+            correctedAnswerOption = "Component for displaying UI decomposed into smaller parts",
             questionNumber = "A"
         )
     }
