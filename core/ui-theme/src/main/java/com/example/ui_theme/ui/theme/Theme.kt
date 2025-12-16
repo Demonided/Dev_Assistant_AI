@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
 
-private val LocalDevAssistantAiColor = staticCompositionLocalOf { LightDevAssistantColor }
+private val LocalDevAssistantAiColor = staticCompositionLocalOf { LightDevAssistantColorScheme }
 
 private val LocalDevAssistantTypography = staticCompositionLocalOf { DevAssistantTypography() }
 
@@ -24,7 +24,7 @@ fun DevAssistantAITheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colorScheme = if (darkTheme) DarkDevAssistantColor else LightDevAssistantColor
+    val colorScheme = if (darkTheme) DarkDevAssistantColorScheme else LightDevAssistantColorScheme
 
     CompositionLocalProvider(
         LocalDevAssistantAiColor provides colorScheme,

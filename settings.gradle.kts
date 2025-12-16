@@ -19,7 +19,9 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Dev AssistantAI"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+rootProject.name = "DevAssistantAI"
 include(":app")
 include(":data")
 include(":core")
@@ -32,7 +34,6 @@ include(":feature:ai-chat")
 include(":feature:quiz")
 include(":feature:theory")
 include(":feature:settings")
-include(":feature:base")
 include(":feature:profile")
 
 project(":core:ui-theme").projectDir = file("core/ui-theme")
@@ -43,5 +44,4 @@ project(":feature:ai-chat").projectDir = file("feature/ai-chat")
 project(":feature:quiz").projectDir = file("feature/quiz")
 project(":feature:theory").projectDir = file("feature/theory")
 project(":feature:settings").projectDir = file("feature/settings")
-project(":feature:base").projectDir = file("feature/base")
 project(":feature:profile").projectDir = file("feature/profile")
