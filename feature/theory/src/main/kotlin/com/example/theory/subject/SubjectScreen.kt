@@ -1,5 +1,6 @@
 package com.example.theory.subject
 
+import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,7 +11,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.theory.common.HeaderComponent
+import com.example.theory.subject.composable.SubjectHeaderComponent
 import com.example.theory.subject.composable.SubjectsComponent
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
@@ -27,13 +28,14 @@ fun TheoryScreen() {
             .fillMaxSize()
             .background(DevAssistantTheme.colors.appBackground)
     ) {
-        HeaderComponent()
+        SubjectHeaderComponent {}
         SubjectsComponent(state.subjects)
 
     }
 }
 
 @Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun HomeScreenPreview() {
     DevAssistantAITheme {

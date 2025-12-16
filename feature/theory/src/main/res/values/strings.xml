@@ -5,5 +5,7 @@
     <string name="progress">Прогресс</string>
     <string name="streak">Дней\nподряд</string>
     <string name="questions">вопросов</string>
+    <string name="start_preparation">Начните подготовку к собеседованию</string>
+    <string name="select_topic">Выберите тему</string>
 
 </resources>

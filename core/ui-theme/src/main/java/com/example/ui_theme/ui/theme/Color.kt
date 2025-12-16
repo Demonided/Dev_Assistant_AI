@@ -7,6 +7,7 @@ import com.example.ui_theme.ui.theme.DevAssistantColor.BottomBarDashboardColor
 val LightDevAssistantColorScheme = DevAssistantColor(
     white = Color(0xFFFFFFFF),
     textTitle = Color(0xFF000000),
+    textColor = Color(0xFFFFFFCC),
     appStartGradient = Color(0xFFB649F3),
     appMediumGradientColor = Color(0xFFF6339A),
     appEndGradient = Color(0xFFFF6900),
@@ -39,6 +40,7 @@ val LightDevAssistantColorScheme = DevAssistantColor(
 val DarkDevAssistantColorScheme = DevAssistantColor(
     white = Color(0xFFFFFFFF),
     textTitle = Color(0xFFFFFFFF),
+    textColor = Color(0xFFFFFFCC),
     appStartGradient = Color(0xFFB649F3),
     appMediumGradientColor = Color(0xFFF6339A),
     appEndGradient = Color(0xFFFF6500),
@@ -70,6 +72,7 @@ val DarkDevAssistantColorScheme = DevAssistantColor(
 
 data class DevAssistantColor(
     val white: Color,
+    val textColor: Color,
     val textTitle: Color,
     val appStartGradient: Color,
     val appMediumGradientColor: Color,

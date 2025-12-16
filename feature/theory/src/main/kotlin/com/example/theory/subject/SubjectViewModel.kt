@@ -1,7 +1,12 @@
 package com.example.theory.subject
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountBox
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.ui.graphics.Color
 import com.example.com.example.devassistantai.viewmodel.BaseViewModel
 import com.example.theory.subject.data.Statistics
@@ -16,73 +21,63 @@ class SubjectViewModel : BaseViewModel<SubjectState, Nothing>() {
     init {
         val subjects = listOf(
             SubjectItem(
-                icon = Icons.Default.Favorite,
-                title = "Android Framework",
-                questionCount = 230,
+                icon = Icons.Default.Home,
+                title = "Kotlin",
+                questionCount = 145,
                 progress = 0.6f,
                 colors = listOf(
-                    Color(0xFF1E7C2F),
-                    Color(0xFF0D5D1F)
+                    Color(0xFFad46ff),
+                    Color(0xFF9810fa)
                 )
             ),
             SubjectItem(
-                icon = Icons.Default.Favorite,
-                title = "Kotlin",
-                questionCount = 180,
+                icon = Icons.Default.AccountBox,
+                title = "Android Framework",
+                questionCount = 230,
                 progress = 0.3f,
                 colors = listOf(
-                    Color(0xFF1E4B7C),
-                    Color(0xFF0D2E5D)
+                    Color(0xFF00c951),
+                    Color(0xFF00a63e)
                 )
             ),
             SubjectItem(
-                icon = Icons.Default.Favorite,
-                title = "Architecture",
+                icon = Icons.Default.DateRange,
+                title = "SQL & Database",
                 questionCount = 120,
                 progress = 0.8f,
                 colors = listOf(
-                    Color(0xFFC63131),
-                    Color(0xFF971919)
+                    Color(0xFF2b7fff),
+                    Color(0xFF155dfc)
                 )
             ),
             SubjectItem(
-                icon = Icons.Default.Favorite,
-                title = "Kotlin",
+                icon = Icons.Default.Share,
+                title = "Architecture",
                 questionCount = 180,
                 progress = 0.3f,
                 colors = listOf(
-                    Color(0xFF1E4B7C),
-                    Color(0xFF0D2E5D)
+                    Color(0xFFff6900),
+                    Color(0xFFf54a00)
                 )
             ),
             SubjectItem(
-                icon = Icons.Default.Favorite,
-                title = "Architecture",
+                icon = Icons.Default.Star,
+                title = "Jetpack Compose",
                 questionCount = 120,
                 progress = 0.8f,
                 colors = listOf(
-                    Color(0xFFC63131),
-                    Color(0xFF971919)
+                    Color(0xFF00b8db),
+                    Color(0xFF0092b8)
                 )
             ),
             SubjectItem(
                 icon = Icons.Default.Favorite,
-                title = "Kotlin",
-                questionCount = 180,
-                progress = 0.3f,
-                colors = listOf(
-                    Color(0xFF1E4B7C),
-                    Color(0xFF0D2E5D)
-                )
-            ),
-            SubjectItem(
-                icon = Icons.Default.Favorite,
-                title = "Architecture",
+                title = "Testing & QA",
                 questionCount = 120,
                 progress = 0.8f,
                 colors = listOf(
-                    Color(0xFFC63131),
-                    Color(0xFF971919)
+                    Color(0xFFf6339a),
+                    Color(0xFFe60076)
                 )
             )
         )
