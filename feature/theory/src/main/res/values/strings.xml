@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">theory</string>
+    <string name="app_name">Dev Assistant AI</string>
+    <string name="your_statistic">Ваша статистика</string>
+    <string name="learned">Изучено</string>
+    <string name="progress">Прогресс</string>
+    <string name="streak">Дней\nподряд</string>
+    <string name="questions">вопросов</string>
+
 </resources>

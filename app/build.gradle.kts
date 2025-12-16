@@ -45,16 +45,15 @@ android {
 
 dependencies {
     // Modules
-    implementation(project(":core:ui-theme"))
-    implementation(project(":core:ai-sdk"))
-    implementation(project(":core:common"))
-    implementation(project(":data:user"))
-    implementation(project(":feature:ai-chat"))
-    implementation(project(":feature:base"))
-    implementation(project(":feature:profile"))
-    implementation(project(":feature:quiz"))
-    implementation(project(":feature:settings"))
-    implementation(project(":feature:theory"))
+    implementation(projects.core.uiTheme)
+    implementation(projects.core.aiSdk)
+    implementation(projects.core.common)
+    implementation(projects.data.user)
+    implementation(projects.feature.aiChat)
+    implementation(projects.feature.profile)
+    implementation(projects.feature.quiz)
+    implementation(projects.feature.settings)
+    implementation(projects.feature.theory)
 
     // Android
     implementation(libs.androidx.core.ktx)

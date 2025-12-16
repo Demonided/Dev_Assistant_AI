@@ -2,21 +2,40 @@ package com.example.ui_theme.ui.theme
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
-import com.example.ui_theme.ui.theme.DevAssistantColor.BottomBarDashboard
+import com.example.ui_theme.ui.theme.DevAssistantColor.BottomBarDashboardColor
 import com.example.ui_theme.ui.theme.DevAssistantColor.Quiz
 
-val LightDevAssistantColor = DevAssistantColor(
-    textTitle = Color(0xFFFFFFFF),
+val LightDevAssistantColorScheme = DevAssistantColor(
+    white = Color(0xFFFFFFFF),
+    textTitle = Color(0xFF000000),
+    appStartGradient = Color(0xFFB649F3),
+    appMediumGradientColor = Color(0xFFF6339A),
+    appEndGradient = Color(0xFFFF6900),
+    appBackground = Color(0xFFFFFFFF),
 
-    bottomBarDashboard = BottomBarDashboard(
-        backgroundBottomBar = Color(0xFFE9E9EC),
-        colorEnableIcon = Color(0xFFFFFFFF),
-        colorDisableIcon = Color(0xFF2A2A2A),
-        gradientStartEnableIcon = Color(0xFF274A7A),
-        gradientEndEnableIcon = Color(0xFF8C1F3F),
-        externalCircleEnableIcon = Color(0xFFE0E1E4),
-        borderBottomBar = Color(0xFFCCCCCC)
+    bottomBarDashboard = BottomBarDashboardColor(
+        bottomBarBackground = Color(0xFFE9E9EC),
+        enabledIcon = Color(0xFFFFFFFF),
+        disabledIcon = Color(0xFF2A2A2A),
+        enabledExternalCircleIcon = Color(0xFFE0E1E4),
+        bottomBarBorder = Color(0xFFCCCCCC)
     ),
+
+    statisticCard = DevAssistantColor.StatisticCardColor(
+        border = Color(0xFFD1BFF1),
+        numberOfLearned = Color(0xFFAD46FF),
+        progressPercent = Color(0xFFF6339A),
+        streakNumber = Color(0xFFFF6900),
+        description = Color(0XFF151821)
+    ),
+
+    appCardColor = DevAssistantColor.AppCardColor(
+        background = Color(0XFFFFFFFF),
+        border = Color(0xFFEBE6E7),
+        title = Color(0xFF101828),
+        text = Color(0xFF4A5565)
+    ),
+
     quiz = Quiz(
         backgroundQuizCard = Color(0xFFD3CACA),
         backgroundSelectedAnswerOption = Color(0xFF3A1E5E).copy(alpha = 0.3f),
@@ -31,18 +50,37 @@ val LightDevAssistantColor = DevAssistantColor(
     )
 )
 
-val DarkDevAssistantColor = DevAssistantColor(
-    textTitle = Color(0xFF000000),
+val DarkDevAssistantColorScheme = DevAssistantColor(
+    white = Color(0xFFFFFFFF),
+    textTitle = Color(0xFFFFFFFF),
+    appStartGradient = Color(0xFFB649F3),
+    appMediumGradientColor = Color(0xFFF6339A),
+    appEndGradient = Color(0xFFFF6500),
+    appBackground = Color(0xFF101828),
 
-    bottomBarDashboard = BottomBarDashboard(
-        backgroundBottomBar = Color(0xFF121315),
-        colorEnableIcon = Color(0xFFFFFFFF),
-        colorDisableIcon = Color(0xFF8A8A8A),
-        gradientStartEnableIcon = Color(0xFF274A7A),
-        gradientEndEnableIcon = Color(0xFF8C1F3F),
-        externalCircleEnableIcon = Color(0xFF1E1F22),
-        borderBottomBar = Color(0xFF626161)
+    bottomBarDashboard = BottomBarDashboardColor(
+        bottomBarBackground = Color(0xFF121315),
+        enabledIcon = Color(0xFFFFFFFF),
+        disabledIcon = Color(0xFF8A8A8A),
+        enabledExternalCircleIcon = Color(0xFF1E1F22),
+        bottomBarBorder = Color(0xFF626161)
     ),
+
+    statisticCard = DevAssistantColor.StatisticCardColor(
+        border = Color(0xFFAD46FF),
+        numberOfLearned = Color(0xFFAD46FF),
+        progressPercent = Color(0xFFF6339A),
+        streakNumber = Color(0xFFFF6900),
+        description = Color(0X1A545868)
+    ),
+
+    appCardColor = DevAssistantColor.AppCardColor(
+        background = Color(0XFF182B3A),
+        border = Color(0XFF364153),
+        title = Color(0xFFFFFFFF),
+        text = Color(0xFF99A1AF)
+    ),
+
     quiz = Quiz(
         backgroundQuizCard = Color(0xFFD3CACA),
         backgroundSelectedAnswerOption = Color(0xFF3A1E5E).copy(alpha = 0.3f),
@@ -58,20 +96,42 @@ val DarkDevAssistantColor = DevAssistantColor(
 )
 
 data class DevAssistantColor(
+    val white: Color,
     val textTitle: Color,
+    val appStartGradient: Color,
+    val appMediumGradientColor: Color,
+    val appEndGradient: Color,
+    val appBackground: Color,
 
-    val bottomBarDashboard: BottomBarDashboard,
+    val bottomBarDashboard: BottomBarDashboardColor,
+    val statisticCard: StatisticCardColor,
+    val appCardColor: AppCardColor,
     val quiz: Quiz,
 ) {
     @Immutable
-    data class BottomBarDashboard(
-        val backgroundBottomBar: Color,
-        val colorEnableIcon: Color,
-        val colorDisableIcon: Color,
-        val gradientStartEnableIcon: Color,
-        val gradientEndEnableIcon: Color,
-        val externalCircleEnableIcon: Color,
-        val borderBottomBar: Color
+    data class BottomBarDashboardColor(
+        val bottomBarBackground: Color,
+        val enabledIcon: Color,
+        val disabledIcon: Color,
+        val enabledExternalCircleIcon: Color,
+        val bottomBarBorder: Color
+    )
+
+    @Immutable
+    data class StatisticCardColor(
+        val border: Color,
+        val numberOfLearned: Color,
+        val progressPercent: Color,
+        val streakNumber: Color,
+        val description: Color
+    )
+
+    @Immutable
+    data class AppCardColor(
+        val background: Color,
+        val border: Color,
+        val title: Color,
+        val text: Color
     )
 
     data class Quiz(

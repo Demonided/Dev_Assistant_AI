@@ -55,7 +55,7 @@ fun NavBarItems(
                 modifier = Modifier
                     .size(70.dp)
                     .background(
-                        color = DevAssistantTheme.colors.bottomBarDashboard.externalCircleEnableIcon,
+                        color = DevAssistantTheme.colors.bottomBarDashboard.enabledExternalCircleIcon,
                         shape = CircleShape
                     )
             )
@@ -67,8 +67,8 @@ fun NavBarItems(
                         brush = Brush.linearGradient(
                             colors =
                                 listOf(
-                                    DevAssistantTheme.colors.bottomBarDashboard.gradientStartEnableIcon,
-                                    DevAssistantTheme.colors.bottomBarDashboard.gradientEndEnableIcon
+                                    DevAssistantTheme.colors.appStartGradient,
+                                    DevAssistantTheme.colors.appEndGradient
                                 ),
                             start = Offset(0f, 0f),
                             end = Offset(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
@@ -82,8 +82,8 @@ fun NavBarItems(
             painter = painterResource(id = icon),
             contentDescription = null,
             tint = if (isSelected) {
-                DevAssistantTheme.colors.bottomBarDashboard.colorEnableIcon
-            } else DevAssistantTheme.colors.bottomBarDashboard.colorDisableIcon,
+                DevAssistantTheme.colors.bottomBarDashboard.enabledIcon
+            } else DevAssistantTheme.colors.bottomBarDashboard.disabledIcon,
             modifier = Modifier.size(size)
         )
     }
