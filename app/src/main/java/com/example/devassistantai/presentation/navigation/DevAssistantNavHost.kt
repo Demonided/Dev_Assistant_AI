@@ -11,7 +11,7 @@ import com.example.devassistantai.presentation.ui.HomeScreenContainer
 import com.example.profile.ProfileScreen
 import com.example.settings.SettingsScreen
 import com.example.tests.presentation.QuizScreen
-import com.example.theory.subject.TheoryScreen
+import com.example.theory.subject.SubjectScreen
 
 @Composable
 fun DevAssistantNavHost(
@@ -31,7 +31,7 @@ fun DevAssistantNavHost(
             ChatAIScreen()
         }
         composable(route = Theory.route) {
-            TheoryScreen()
+            SubjectScreen()
         }
         composable(route = Quiz.route) {
             QuizScreen()

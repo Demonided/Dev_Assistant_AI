@@ -13,8 +13,13 @@ import com.example.theory.subject.data.Statistics
 import com.example.theory.subject.data.SubjectData
 import com.example.theory.subject.data.SubjectItem
 import com.example.theory.subject.data.SubjectState
+import dagger.hilt.android.lifecycle.HiltViewModel
+import jakarta.inject.Inject
 
-class SubjectViewModel : BaseViewModel<SubjectState, Nothing>() {
+@HiltViewModel
+class SubjectViewModel @Inject constructor(
+
+) : BaseViewModel<SubjectState, Nothing>() {
 
     override fun initialState(): SubjectState = SubjectState.DEFAULT
 

@@ -11,7 +11,9 @@ import androidx.compose.ui.Modifier
 import com.example.devassistantai.presentation.navigation.DevAssistantScreen
 import com.example.devassistantai.presentation.navigation.Theory
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
