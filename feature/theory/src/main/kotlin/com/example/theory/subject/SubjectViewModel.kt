@@ -26,6 +26,7 @@ class SubjectViewModel @Inject constructor(
     init {
         val subjects = listOf(
             SubjectItem(
+                id = "1",
                 icon = Icons.Default.Home,
                 title = "Kotlin",
                 questionCount = 145,
@@ -36,6 +37,7 @@ class SubjectViewModel @Inject constructor(
                 )
             ),
             SubjectItem(
+                id = "2",
                 icon = Icons.Default.AccountBox,
                 title = "Android Framework",
                 questionCount = 230,
@@ -46,6 +48,7 @@ class SubjectViewModel @Inject constructor(
                 )
             ),
             SubjectItem(
+                id = "3",
                 icon = Icons.Default.DateRange,
                 title = "SQL & Database",
                 questionCount = 120,
@@ -56,6 +59,7 @@ class SubjectViewModel @Inject constructor(
                 )
             ),
             SubjectItem(
+                id = "4",
                 icon = Icons.Default.Share,
                 title = "Architecture",
                 questionCount = 180,
@@ -66,6 +70,7 @@ class SubjectViewModel @Inject constructor(
                 )
             ),
             SubjectItem(
+                id = "5",
                 icon = Icons.Default.Star,
                 title = "Jetpack Compose",
                 questionCount = 120,
@@ -76,6 +81,7 @@ class SubjectViewModel @Inject constructor(
                 )
             ),
             SubjectItem(
+                id = "6",
                 icon = Icons.Default.Favorite,
                 title = "Testing & QA",
                 questionCount = 120,
