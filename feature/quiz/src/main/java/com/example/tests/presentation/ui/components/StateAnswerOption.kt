@@ -11,30 +11,35 @@ fun stateAnswerOptions(state: AnswerState): AnswerColor =
         AnswerState.DEFAULT -> AnswerColor(
             background = Color.Transparent,
             border = DevAssistantTheme.colors.quiz.borderAnswerOption,
+            labelColor = DevAssistantTheme.colors.textTitle,
             labelBorder = DevAssistantTheme.colors.quiz.borderAnswerOption,
             labelBackground = Color.Transparent
         )
         AnswerState.SELECTED -> AnswerColor(
             background = DevAssistantTheme.colors.quiz.backgroundSelectedAnswerOption,
             border = DevAssistantTheme.colors.quiz.borderBackgroundSelectedAnswerOption,
+            labelColor = DevAssistantTheme.colors.white,
             labelBorder = DevAssistantTheme.colors.quiz.backgroundLabelSelectedAnswerOption,
             labelBackground = DevAssistantTheme.colors.quiz.backgroundLabelSelectedAnswerOption
         )
         AnswerState.CORRECT -> AnswerColor(
             background = DevAssistantTheme.colors.quiz.backgroundCorrectAnswerOption,
             border = DevAssistantTheme.colors.quiz.borderBackgroundCorrectAnswerOption,
+            labelColor = DevAssistantTheme.colors.white,
             labelBorder = DevAssistantTheme.colors.quiz.borderBackgroundCorrectAnswerOption,
             labelBackground = DevAssistantTheme.colors.quiz.borderBackgroundCorrectAnswerOption
         )
         AnswerState.INCORRECT -> AnswerColor(
             background = DevAssistantTheme.colors.quiz.backgroundIncorrectedAnswerOption,
             border = DevAssistantTheme.colors.quiz.borderBackgroundIncorrectedAnswerOption,
+            labelColor = DevAssistantTheme.colors.white,
             labelBorder = DevAssistantTheme.colors.quiz.borderBackgroundIncorrectedAnswerOption,
             labelBackground = DevAssistantTheme.colors.quiz.borderBackgroundIncorrectedAnswerOption
         )
         AnswerState.CORRECT_IDLE -> AnswerColor(
             background = DevAssistantTheme.colors.quiz.backgroundCorrectAnswerOption,
             border = DevAssistantTheme.colors.quiz.borderBackgroundCorrectAnswerOption,
+            labelColor = DevAssistantTheme.colors.white,
             labelBorder = DevAssistantTheme.colors.quiz.borderBackgroundCorrectAnswerOption,
             labelBackground = DevAssistantTheme.colors.quiz.borderBackgroundCorrectAnswerOption
         )

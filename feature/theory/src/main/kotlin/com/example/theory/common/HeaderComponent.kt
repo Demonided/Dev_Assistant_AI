@@ -11,8 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.theory.extantion.angleLinearGradient
+import com.example.ui_theme.extantion.angleLinearGradient
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
+import com.example.ui_theme.ui.theme.DevAssistantGradient
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
@@ -22,11 +23,7 @@ fun HeaderComponent() {
             .fillMaxWidth()
             .height(135.dp)
             .angleLinearGradient(
-                colors = listOf(
-                    DevAssistantTheme.colors.appStartGradient,
-                    DevAssistantTheme.colors.appMediumGradientColor,
-                    DevAssistantTheme.colors.appEndGradient
-                ),
+                colors = DevAssistantGradient.primary(),
                 angle = 60f
             )
             .padding(start = 20.dp, end = 20.dp)

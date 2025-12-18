@@ -1,4 +1,4 @@
-package com.example.theory.extantion
+package com.example.ui_theme.extantion
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind

@@ -4,6 +4,9 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
+import com.example.ui_theme.ui.theme.color.DarkDevAssistantColorScheme
+import com.example.ui_theme.ui.theme.color.DevAssistantColor
+import com.example.ui_theme.ui.theme.color.LightDevAssistantColorScheme
 
 private val LocalDevAssistantAiColor = staticCompositionLocalOf { LightDevAssistantColorScheme }
 
