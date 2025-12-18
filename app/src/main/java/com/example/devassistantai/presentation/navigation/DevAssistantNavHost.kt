@@ -12,6 +12,7 @@ import com.example.profile.ProfileScreen
 import com.example.settings.SettingsScreen
 import com.example.tests.presentation.QuizScreen
 import com.example.theory.subject.SubjectScreen
+import com.example.theory.topic.TopicScreen
 
 @Composable
 fun DevAssistantNavHost(
@@ -41,6 +42,9 @@ fun DevAssistantNavHost(
         }
         composable(route = Settings.route) {
             SettingsScreen()
+        }
+        composable(route = TheoryTopic.route) {
+            TopicScreen()
         }
     }
 }
