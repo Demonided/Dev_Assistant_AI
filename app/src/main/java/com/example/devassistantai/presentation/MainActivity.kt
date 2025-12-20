@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.devassistantai.presentation.navigation.DevAssistantScreen
 import com.example.devassistantai.presentation.navigation.Theory
@@ -24,13 +23,9 @@ class MainActivity : ComponentActivity() {
                 Box(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    Surface(
-                        modifier = Modifier.fillMaxSize()
-                    ) {
-                        DevAssistantScreen(
-                            startDestination = Theory.route
-                        )
-                    }
+                    DevAssistantScreen(
+                        startDestination = Theory.route
+                    )
                 }
             }
         }

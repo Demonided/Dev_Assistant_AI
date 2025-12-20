@@ -22,13 +22,7 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 fun SubjectHeaderComponent(
     onSearchTextChanged: (String) -> Unit
 ) {
-    HeaderComponent(
-        background = listOf(
-            DevAssistantTheme.colors.appStartGradient,
-            DevAssistantTheme.colors.appMediumGradientColor,
-            DevAssistantTheme.colors.appEndGradient
-        )
-    ) {
+    HeaderComponent {
         Spacer(
             modifier = Modifier
                 .fillMaxWidth()
@@ -37,7 +31,7 @@ fun SubjectHeaderComponent(
         Text(
             text = stringResource(R.string.select_topic),
             color = DevAssistantTheme.colors.white,
-            fontSize = 12.sp,
+            fontSize = 14.sp,
             modifier = Modifier.padding(bottom = 10.dp)
         )
         Text(

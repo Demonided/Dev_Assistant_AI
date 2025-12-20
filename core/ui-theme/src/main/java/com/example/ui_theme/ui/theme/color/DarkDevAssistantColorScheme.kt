@@ -9,6 +9,7 @@ val DarkDevAssistantColorScheme = DevAssistantColor(
     blackWhite = Color(0xFFFFFFFF),
     whiteBlack = Color(0xFF000000),
     textTitle = Color(0xFFFFFFFF),
+    textColor = Color(0xFFFFFFCC),
     appStartGradient = Color(0xFFB649F3),
     appMediumGradientColor = Color(0xFFF6339A),
     appEndGradient = Color(0xFFFF6500),
