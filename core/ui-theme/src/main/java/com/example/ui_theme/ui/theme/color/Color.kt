@@ -15,6 +15,9 @@ data class DevAssistantColor(
     val appBackground: Color,
     val appCardBackground: Color,
 
+    val purpleStartGradientColor: Color,
+    val purpleEndGradientColor: Color,
+
     val bottomBarDashboard: BottomBarDashboardColor,
     val statisticCard: StatisticCardColor,
     val appCardColor: AppCardColor,

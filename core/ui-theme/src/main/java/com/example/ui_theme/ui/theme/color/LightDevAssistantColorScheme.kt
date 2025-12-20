@@ -16,6 +16,9 @@ val LightDevAssistantColorScheme = DevAssistantColor(
     appBackground = Color(0xFFFFFFFF),
     appCardBackground = Color(0xFFF1F1F1),
 
+    purpleStartGradientColor = Color(0xFF9810FA),
+    purpleEndGradientColor = Color(0xFFAD46FF),
+
     bottomBarDashboard = BottomBarDashboardColor(
         bottomBarBackground = Color(0xFFE9E9EC),
         enabledIcon = Color(0xFFFFFFFF),
