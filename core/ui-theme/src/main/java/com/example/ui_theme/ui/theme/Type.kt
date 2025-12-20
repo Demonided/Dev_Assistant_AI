@@ -21,11 +21,19 @@ data class DevAssistantTypography(
 
     val answerOptionText: TextStyle = TextStyle(
         fontFamily = enterFamily,
-        fontWeight = FontWeight.Light,
-        textAlign = TextAlign.Center,
+        fontWeight = FontWeight.Normal,
+        textAlign = TextAlign.Start,
         color = Color.White,
-        fontSize = 22.sp,
-        lineHeight = 22.sp,
+        fontSize = 20.sp,
+        lineHeight = 26.sp,
+    ),
+
+    val quizQuestionText: TextStyle = TextStyle(
+        fontFamily = enterFamily,
+        fontWeight = FontWeight.Normal,
+        textAlign = TextAlign.Start,
+        fontSize = 20.sp,
+        lineHeight = 30.sp,
     ),
 )
 
@@ -37,6 +45,7 @@ val enterFamily = FontFamily(
     Font(R.font.inter_thin, FontWeight.Thin),
     Font(R.font.inter_extra_light, FontWeight.ExtraLight),
     Font(R.font.inter_light, FontWeight.Light),
+    Font(R.font.inter_regular, FontWeight.Normal),
     Font(R.font.inter_medium, FontWeight.Medium),
     Font(R.font.inter_bold, FontWeight.Bold),
 )
