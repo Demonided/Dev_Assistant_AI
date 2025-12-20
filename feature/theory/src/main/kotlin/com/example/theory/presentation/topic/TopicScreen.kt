@@ -1,4 +1,4 @@
-package com.example.theory.topic
+package com.example.theory.presentation.topic
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

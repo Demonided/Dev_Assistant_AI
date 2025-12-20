@@ -1,4 +1,4 @@
-package com.example.theory.subject.composable
+package com.example.theory.presentation.subject.ui.components
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -19,13 +19,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.theory.R
-import com.example.theory.subject.data.Statistics
-import com.example.theory.subject.data.SubjectData
-import com.example.theory.subject.data.SubjectItem
+import com.example.theory.presentation.subject.data.SubjectState
+import com.example.theory.presentation.subject.ui.model.StatisticsModel
+import com.example.theory.presentation.subject.ui.model.SubjectModel
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 
 @Composable
-fun SubjectsComponent(subjects: SubjectData) {
+fun SubjectsComponent(subjects: SubjectState) {
     LazyColumn(
         modifier = Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(16.dp),
@@ -42,7 +42,7 @@ fun SubjectsComponent(subjects: SubjectData) {
             )
         }
         item {
-            with(subjects.statistics) {
+            with(subjects.statisticsModel) {
                 StatisticsCard(
                     learned = learned,
                     progress = progress,
@@ -58,7 +58,7 @@ fun SubjectsComponent(subjects: SubjectData) {
 @Composable
 fun SubjectsComponentPreview() {
     val subjects = listOf(
-        SubjectItem(
+        SubjectModel(
             id = "1",
             icon = Icons.Default.Home,
             title = "Kotlin",
@@ -69,7 +69,7 @@ fun SubjectsComponentPreview() {
                 Color(0xFF9810fa)
             )
         ),
-        SubjectItem(
+        SubjectModel(
             id = "2",
             icon = Icons.Default.AccountBox,
             title = "Android Framework",
@@ -80,7 +80,7 @@ fun SubjectsComponentPreview() {
                 Color(0xFF00a63e)
             )
         ),
-        SubjectItem(
+        SubjectModel(
             id = "3",
             icon = Icons.Default.DateRange,
             title = "SQL & Database",
@@ -91,7 +91,7 @@ fun SubjectsComponentPreview() {
                 Color(0xFF155dfc)
             )
         ),
-        SubjectItem(
+        SubjectModel(
             id = "4",
             icon = Icons.Default.Share,
             title = "Architecture",
@@ -102,7 +102,7 @@ fun SubjectsComponentPreview() {
                 Color(0xFFf54a00)
             )
         ),
-        SubjectItem(
+        SubjectModel(
             id = "5",
             icon = Icons.Default.Star,
             title = "Jetpack Compose",
@@ -115,7 +115,7 @@ fun SubjectsComponentPreview() {
         ),
     )
     DevAssistantAITheme {
-        val statistics = Statistics(243, 67, 12)
-        SubjectsComponent(SubjectData(subjectItems = subjects, statistics = statistics))
+        val statisticsModel = StatisticsModel(243, 67, 12)
+        SubjectsComponent(SubjectState(subjectItems = subjects, statisticsModel = statisticsModel))
     }
 }

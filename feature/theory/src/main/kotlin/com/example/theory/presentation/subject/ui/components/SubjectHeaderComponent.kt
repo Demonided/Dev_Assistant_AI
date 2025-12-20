@@ -1,4 +1,4 @@
-package com.example.theory.subject.composable
+package com.example.theory.presentation.subject.ui.components
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Spacer
@@ -13,16 +13,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.theory.R
-import com.example.theory.common.AppSearchField
-import com.example.theory.common.HeaderComponent
+import com.example.theory.common.ui.components.HeaderComponent
+import com.example.ui_theme.extantion.angleLinearGradient
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
+import com.example.ui_theme.ui.theme.DevAssistantGradient
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
 fun SubjectHeaderComponent(
     onSearchTextChanged: (String) -> Unit
 ) {
-    HeaderComponent {
+    HeaderComponent(
+        modifier = Modifier.angleLinearGradient(
+            colors = DevAssistantGradient.primary(),
+            angle = 60f
+        ),
+    ) {
         Spacer(
             modifier = Modifier
                 .fillMaxWidth()

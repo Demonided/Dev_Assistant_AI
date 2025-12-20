@@ -1,4 +1,4 @@
-package com.example.theory.subject
+package com.example.theory.presentation.subject
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
@@ -9,10 +9,9 @@ import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.ui.graphics.Color
 import com.example.com.example.devassistantai.viewmodel.BaseViewModel
-import com.example.theory.subject.data.Statistics
-import com.example.theory.subject.data.SubjectData
-import com.example.theory.subject.data.SubjectItem
-import com.example.theory.subject.data.SubjectState
+import com.example.theory.presentation.subject.data.SubjectState
+import com.example.theory.presentation.subject.ui.model.StatisticsModel
+import com.example.theory.presentation.subject.ui.model.SubjectModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 
@@ -25,7 +24,7 @@ class SubjectViewModel @Inject constructor(
 
     init {
         val subjects = listOf(
-            SubjectItem(
+            SubjectModel(
                 id = "1",
                 icon = Icons.Default.Home,
                 title = "Kotlin",
@@ -36,7 +35,7 @@ class SubjectViewModel @Inject constructor(
                     Color(0xFF9810fa)
                 )
             ),
-            SubjectItem(
+            SubjectModel(
                 id = "2",
                 icon = Icons.Default.AccountBox,
                 title = "Android Framework",
@@ -47,7 +46,7 @@ class SubjectViewModel @Inject constructor(
                     Color(0xFF00a63e)
                 )
             ),
-            SubjectItem(
+            SubjectModel(
                 id = "3",
                 icon = Icons.Default.DateRange,
                 title = "SQL & Database",
@@ -58,7 +57,7 @@ class SubjectViewModel @Inject constructor(
                     Color(0xFF155dfc)
                 )
             ),
-            SubjectItem(
+            SubjectModel(
                 id = "4",
                 icon = Icons.Default.Share,
                 title = "Architecture",
@@ -69,7 +68,7 @@ class SubjectViewModel @Inject constructor(
                     Color(0xFFf54a00)
                 )
             ),
-            SubjectItem(
+            SubjectModel(
                 id = "5",
                 icon = Icons.Default.Star,
                 title = "Jetpack Compose",
@@ -80,7 +79,7 @@ class SubjectViewModel @Inject constructor(
                     Color(0xFF0092b8)
                 )
             ),
-            SubjectItem(
+            SubjectModel(
                 id = "6",
                 icon = Icons.Default.Favorite,
                 title = "Testing & QA",
@@ -93,10 +92,10 @@ class SubjectViewModel @Inject constructor(
             )
         )
 
-        val statistics = Statistics(243, 67, 12)
+        val statisticsModel = StatisticsModel(243, 67, 12)
 
         updateState {
-            copy(subjects = SubjectData(subjectItems = subjects, statistics = statistics))
+            copy(subjectItems = subjects, statisticsModel = statisticsModel)
         }
     }
 }

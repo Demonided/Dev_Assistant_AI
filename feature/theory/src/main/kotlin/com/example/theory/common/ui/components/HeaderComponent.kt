@@ -1,5 +1,6 @@
-package com.example.theory.common
+package com.example.theory.common.ui.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,10 +22,6 @@ fun HeaderComponent(
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .angleLinearGradient(
-                colors = DevAssistantGradient.primary(),
-                angle = 60f
-            )
             .padding(start = 20.dp, end = 20.dp, bottom = 24.dp),
     ) {
         content()
@@ -33,17 +30,17 @@ fun HeaderComponent(
 
 @Composable
 @Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun HeaderComponentPreview() {
     DevAssistantAITheme {
         HeaderComponent(
             modifier = Modifier
                 .height(40.dp)
-                .fillMaxWidth(),
-//            background = listOf(
-//                DevAssistantTheme.colors.appStartGradient,
-//                DevAssistantTheme.colors.appMediumGradientColor,
-//                DevAssistantTheme.colors.appEndGradient
-//            )
+                .fillMaxWidth()
+                .angleLinearGradient(
+                    colors = DevAssistantGradient.primary(),
+                    angle = 60f
+                ),
         ) { }
     }
 }

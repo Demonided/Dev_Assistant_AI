@@ -1,4 +1,4 @@
-package com.example.theory.subject
+package com.example.theory.presentation.subject
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
@@ -12,8 +12,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.theory.subject.composable.SubjectHeaderComponent
-import com.example.theory.subject.composable.SubjectsComponent
+import com.example.theory.presentation.subject.ui.components.SubjectHeaderComponent
+import com.example.theory.presentation.subject.ui.components.SubjectsComponent
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
@@ -31,7 +31,7 @@ fun SubjectScreen(
             .background(DevAssistantTheme.colors.appBackground)
     ) {
         SubjectHeaderComponent {}
-        SubjectsComponent(state.subjects)
+        SubjectsComponent(state)
 
     }
 }
