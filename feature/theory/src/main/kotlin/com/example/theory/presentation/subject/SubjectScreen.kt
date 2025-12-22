@@ -19,7 +19,8 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
 fun SubjectScreen(
-    viewModel: SubjectViewModel = hiltViewModel()
+    viewModel: SubjectViewModel = hiltViewModel(),
+    onSubjectClick: (String) -> Unit
 ) {
     val state by viewModel.state.collectAsState()
 
@@ -31,7 +32,7 @@ fun SubjectScreen(
             .background(DevAssistantTheme.colors.appBackground)
     ) {
         SubjectHeaderComponent {}
-        SubjectsComponent(state)
+        SubjectsComponent(subjects = state, onClick = onSubjectClick)
 
     }
 }
@@ -41,6 +42,6 @@ fun SubjectScreen(
 @Composable
 fun HomeScreenPreview() {
     DevAssistantAITheme {
-        SubjectScreen()
+        SubjectScreen {}
     }
 }

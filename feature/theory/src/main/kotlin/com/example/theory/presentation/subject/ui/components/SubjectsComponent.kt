@@ -25,7 +25,10 @@ import com.example.theory.presentation.subject.ui.model.SubjectModel
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 
 @Composable
-fun SubjectsComponent(subjects: SubjectState) {
+fun SubjectsComponent(
+    subjects: SubjectState,
+    onClick: (String) -> Unit
+) {
     LazyColumn(
         modifier = Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(16.dp),
@@ -38,7 +41,7 @@ fun SubjectsComponent(subjects: SubjectState) {
                 subtitle = "${subject.questionCount} ${stringResource(R.string.questions)}",
                 progress = subject.progress,
                 colors = subject.colors,
-                onClick = { /* обработка клика */ }
+                onClick = { onClick(subject.id) }
             )
         }
         item {
@@ -114,8 +117,15 @@ fun SubjectsComponentPreview() {
             )
         ),
     )
+    val statisticsModel = StatisticsModel(243, 67, 12)
+
     DevAssistantAITheme {
-        val statisticsModel = StatisticsModel(243, 67, 12)
-        SubjectsComponent(SubjectState(subjectItems = subjects, statisticsModel = statisticsModel))
+        SubjectsComponent(
+            subjects = SubjectState(
+                subjectItems = subjects,
+                statisticsModel = statisticsModel
+            ),
+            onClick = {}
+        )
     }
 }

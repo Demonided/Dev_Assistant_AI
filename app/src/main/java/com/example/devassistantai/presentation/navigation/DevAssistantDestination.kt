@@ -29,7 +29,7 @@ object Profile : DevAssistantDestination {
 }
 
 object TheoryTopic : DevAssistantDestination {
-    override val route = "topic"
+    override val route = "theory/topic"
 }
 
 val devAssistantBottomTabRowScreens =

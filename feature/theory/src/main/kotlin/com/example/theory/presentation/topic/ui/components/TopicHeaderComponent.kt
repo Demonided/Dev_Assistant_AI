@@ -19,6 +19,8 @@ import com.example.ui_theme.ui.theme.DevAssistantGradient
 fun TopicHeaderComponent(
     modifier: Modifier = Modifier,
     colors: List<Color>,
+    subject: String,
+    topic: String,
     onBackButtonClick: () -> Unit
 ) {
     HeaderComponent(
@@ -31,16 +33,27 @@ fun TopicHeaderComponent(
             .fillMaxWidth()
             .height(20.dp))
         BackButton(onButtonClick = onBackButtonClick)
-        Spacer(modifier = Modifier
-            .fillMaxWidth()
-            .height(10.dp))
+        Spacer(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(10.dp)
+        )
         Text(
             color = Color.White,
-            text = "Основы синтаксиса Kotlin"
+            text = subject
         )
         Spacer(modifier = Modifier
             .fillMaxWidth()
-            .height(5.dp))
+            .height(5.dp)
+        )
+        Text(
+            color = Color.White,
+            text = topic
+        )
+        Spacer(modifier = Modifier
+            .fillMaxWidth()
+            .height(10.dp)
+        )
         Text(
             color = Color.White,
             text = "15 мин"
@@ -54,7 +67,9 @@ fun TopicHeaderComponent(
 fun TopicHeaderComponentPreview() {
     DevAssistantAITheme {
         TopicHeaderComponent(
-            colors = DevAssistantGradient.purple()
+            colors = DevAssistantGradient.purple(),
+            subject = "Kotlin",
+            topic = "Основы синтаксиса Kotlin"
         ) {}
     }
 }

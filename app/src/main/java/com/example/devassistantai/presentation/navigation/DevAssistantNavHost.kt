@@ -32,7 +32,9 @@ fun DevAssistantNavHost(
             ChatAIScreen()
         }
         composable(route = Theory.route) {
-            SubjectScreen()
+            SubjectScreen(
+                onSubjectClick = { navController.navigate(TheoryTopic.route) }
+            )
         }
         composable(route = Quiz.route) {
             QuizScreen()
@@ -44,7 +46,9 @@ fun DevAssistantNavHost(
             SettingsScreen()
         }
         composable(route = TheoryTopic.route) {
-            TopicScreen()
+            TopicScreen(
+                onBackButtonClick = { navController.navigate(Theory.route) }
+            )
         }
     }
 }
