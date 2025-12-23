@@ -1,0 +1,38 @@
+package com.example.theory.presentation.topic
+
+import android.content.res.Configuration
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.theory.presentation.topic.ui.components.TopicHeaderComponent
+import com.example.ui_theme.ui.theme.DevAssistantAITheme
+import com.example.ui_theme.ui.theme.DevAssistantGradient
+
+@Composable
+fun TopicScreen(
+    viewModel: TopicViewModel = hiltViewModel(),
+    onBackButtonClick: () -> Unit
+) {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+    ) {
+        TopicHeaderComponent(
+            colors = DevAssistantGradient.purple(),
+            subject = "Kotlin",
+            topic = "Основы синтаксиса Kotlin",
+            onBackButtonClick = onBackButtonClick
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun TopicScreenPreview() {
+    DevAssistantAITheme {
+        TopicScreen {}
+    }
+}

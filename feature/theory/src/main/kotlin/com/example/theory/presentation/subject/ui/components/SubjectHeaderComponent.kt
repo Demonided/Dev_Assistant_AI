@@ -1,6 +1,6 @@
-package com.example.theory.common
+package com.example.theory.presentation.subject.ui.components
 
-import androidx.compose.foundation.layout.Column
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -8,26 +8,26 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.theory.R
+import com.example.theory.common.ui.components.HeaderComponent
 import com.example.ui_theme.extantion.angleLinearGradient
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantGradient
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
-fun HeaderComponent() {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(135.dp)
-            .angleLinearGradient(
-                colors = DevAssistantGradient.primary(),
-                angle = 60f
-            )
-            .padding(start = 20.dp, end = 20.dp)
-
+fun SubjectHeaderComponent(
+    onSearchTextChanged: (String) -> Unit
+) {
+    HeaderComponent(
+        modifier = Modifier.angleLinearGradient(
+            colors = DevAssistantGradient.primary(),
+            angle = 60f
+        ),
     ) {
         Spacer(
             modifier = Modifier
@@ -35,29 +35,31 @@ fun HeaderComponent() {
                 .height(20.dp)
         )
         Text(
-            text = "Select topic",
+            text = stringResource(R.string.select_topic),
             color = DevAssistantTheme.colors.white,
-            fontSize = 12.sp,
+            fontSize = 14.sp,
             modifier = Modifier.padding(bottom = 10.dp)
         )
         Text(
-            text = "Start your preparation for interview",
-            color = DevAssistantTheme.colors.white,
+            text = stringResource(R.string.start_preparation),
+            color = DevAssistantTheme.colors.textColor,
             fontSize = 12.sp,
             modifier = Modifier.padding(bottom = 15.dp)
         )
 
         AppSearchField(
             value = "",
-            { }
+            onSearchTextChanged
         )
     }
 }
 
-@Composable
+
 @Preview(showBackground = true)
-fun HeaderComponentPreview() {
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun SubjectHeaderComponentPreview() {
     DevAssistantAITheme {
-        HeaderComponent()
+        SubjectHeaderComponent { _ -> }
     }
 }

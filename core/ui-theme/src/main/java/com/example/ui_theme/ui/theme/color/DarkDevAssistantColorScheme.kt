@@ -9,11 +9,15 @@ val DarkDevAssistantColorScheme = DevAssistantColor(
     blackWhite = Color(0xFFFFFFFF),
     whiteBlack = Color(0xFF000000),
     textTitle = Color(0xFFFFFFFF),
+    textColor = Color(0xFFFFFFCC),
     appStartGradient = Color(0xFFB649F3),
     appMediumGradientColor = Color(0xFFF6339A),
     appEndGradient = Color(0xFFFF6500),
     appBackground = Color(0xFF101828),
     appCardBackground = Color(0xFF282525),
+
+    purpleStartGradientColor = Color(0xFFAD46FF),
+    purpleEndGradientColor = Color(0xFF9810FA),
 
     bottomBarDashboard = BottomBarDashboardColor(
         bottomBarBackground = Color(0xFF121315),

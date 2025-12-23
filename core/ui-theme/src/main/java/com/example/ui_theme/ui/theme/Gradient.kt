@@ -11,4 +11,10 @@ object DevAssistantGradient{
         DevAssistantTheme.colors.appMediumGradientColor,
         DevAssistantTheme.colors.appEndGradient,
     )
+
+    @Composable
+    fun purple(): List<Color> = listOf(
+        DevAssistantTheme.colors.purpleStartGradientColor,
+        DevAssistantTheme.colors.purpleEndGradientColor
+    )
 }

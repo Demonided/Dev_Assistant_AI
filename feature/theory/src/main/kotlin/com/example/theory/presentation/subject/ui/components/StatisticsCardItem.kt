@@ -1,4 +1,4 @@
-package com.example.theory.subject.composable
+package com.example.theory.presentation.subject.ui.components
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background

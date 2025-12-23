@@ -2,19 +2,21 @@ package com.example.ui_theme.ui.theme.color
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
-import com.example.ui_theme.ui.theme.color.DevAssistantColor.BottomBarDashboardColor
-import com.example.ui_theme.ui.theme.color.DevAssistantColor.Quiz
 
 data class DevAssistantColor(
     val white: Color,
     val blackWhite: Color,
     val whiteBlack: Color,
     val textTitle: Color,
+    val textColor: Color,
     val appStartGradient: Color,
     val appMediumGradientColor: Color,
     val appEndGradient: Color,
     val appBackground: Color,
     val appCardBackground: Color,
+
+    val purpleStartGradientColor: Color,
+    val purpleEndGradientColor: Color,
 
     val bottomBarDashboard: BottomBarDashboardColor,
     val statisticCard: StatisticCardColor,
@@ -60,4 +62,5 @@ data class DevAssistantColor(
         val backgroundLabelAnswerOption: Color,
         val quizProgressBar: Color,
     )
+
 }
