@@ -50,7 +50,6 @@ fun SubjectCardItem(
     Card(
         modifier = modifier
             .fillMaxWidth()
-
             .border(
                 width = 1.dp,
                 color = DevAssistantTheme.colors.appCardColor.border,
