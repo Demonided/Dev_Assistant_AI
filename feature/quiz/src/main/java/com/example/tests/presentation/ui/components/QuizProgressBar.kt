@@ -38,7 +38,7 @@ fun QuizProgressBar(
             .fillMaxWidth()
             .height(6.dp)
             .background(
-                color = DevAssistantTheme.colors.quiz.quizProgressBar.copy(alpha = 0.5f),
+                color = DevAssistantTheme.colors.quiz.quizProgressBar.copy(alpha = 0.4f),
                 shape = RoundedCornerShape(50)
             )
     ) {

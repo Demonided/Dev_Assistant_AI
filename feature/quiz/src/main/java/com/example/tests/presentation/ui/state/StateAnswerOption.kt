@@ -1,8 +1,9 @@
-package com.example.tests.presentation.ui.components
+package com.example.tests.presentation.ui.state
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import com.example.tests.domain.model.AnswerState
+import com.example.tests.presentation.ui.components.AnswerColor
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable

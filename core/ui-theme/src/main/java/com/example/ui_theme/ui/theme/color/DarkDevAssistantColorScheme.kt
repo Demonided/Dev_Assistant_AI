@@ -6,6 +6,7 @@ import com.example.ui_theme.ui.theme.color.DevAssistantColor.Quiz
 
 val DarkDevAssistantColorScheme = DevAssistantColor(
     white = Color(0xFFFFFFFF),
+    black = Color(0xFF181818),
     blackWhite = Color(0xFFFFFFFF),
     whiteBlack = Color(0xFF000000),
     textTitle = Color(0xFFFFFFFF),

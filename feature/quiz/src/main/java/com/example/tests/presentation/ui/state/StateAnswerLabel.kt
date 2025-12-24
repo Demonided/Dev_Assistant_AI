@@ -1,4 +1,4 @@
-package com.example.tests.presentation.ui.components
+package com.example.tests.presentation.ui.state
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon

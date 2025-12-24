@@ -7,6 +7,7 @@ import com.example.ui_theme.ui.theme.color.DevAssistantColor.Quiz
 
 data class DevAssistantColor(
     val white: Color,
+    val black: Color,
     val blackWhite: Color,
     val whiteBlack: Color,
     val textTitle: Color,

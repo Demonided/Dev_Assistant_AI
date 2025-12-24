@@ -25,18 +25,20 @@
         c0.912,-0.349 1.501,-1.204 1.501,-2.181
         L21,5.5
         C21,3.019 18.981,1 16.5,1
-        Z" />
+        Z
+    " />
 
-    <!-- Галочка внутри -->
+    <!-- Плюс внутри -->
     <path
         android:fillColor="@android:color/transparent"
         android:strokeColor="#FF000000"
         android:strokeWidth="1.8"
         android:strokeLineCap="round"
-        android:strokeLineJoin="round"
         android:pathData="
-        M8,10
-        L11,13
-        L16,7
-    " />
+            M12,6
+            V12
+
+            M9,9
+            H15
+        " />
 </vector>

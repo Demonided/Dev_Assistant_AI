@@ -1,4 +1,4 @@
-package com.example.tests.presentation.card
+package com.example.tests.presentation.ui.components.card
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Column
@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tests.domain.model.AnswerState
 import com.example.tests.domain.model.QuestionWitchAnswer
-import com.example.tests.presentation.answerLabel
+import com.example.tests.util.answerLabel
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
