@@ -56,7 +56,7 @@ fun QuizProgressBar(
 
 @Preview(showBackground = true)
 @Composable
-fun QuizProgressBarPreview() {
+private fun QuizProgressBarPreview() {
     DevAssistantAITheme {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,

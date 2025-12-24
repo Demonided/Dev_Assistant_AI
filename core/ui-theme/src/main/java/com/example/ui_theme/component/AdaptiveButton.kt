@@ -40,7 +40,7 @@ fun AdaptiveButton(
     buttonText: String,
     modifier: Modifier = Modifier,
     isGradient: Boolean = false,
-    heightButton: Int = 42,
+    heightButton: Int = 60,
     @DrawableRes startButtonIcon: Int? = null,
     @DrawableRes endButtonIcon: Int? = null,
     isEnable: Boolean = true,
@@ -49,7 +49,7 @@ fun AdaptiveButton(
     Button(
         onClick = onClick,
         enabled = isEnable,
-        shape = RoundedCornerShape(8.dp),
+        shape = RoundedCornerShape(12.dp),
         border = if (isGradient) BorderStroke(0.dp, Color.Gray) else BorderStroke(1.dp, Color.Gray),
         contentPadding = PaddingValues(0.dp),
         colors = ButtonDefaults.buttonColors(Color.Transparent),
@@ -61,7 +61,7 @@ fun AdaptiveButton(
                 .fillMaxSize()
                 .then(
                     if (isGradient) {
-                        Modifier.angleLinearGradient(DevAssistantGradient.primary(), 45f)
+                        Modifier.angleLinearGradient(DevAssistantGradient.primary(), 20f)
                     } else {
                         Modifier.background(Color.Transparent)
                     }
@@ -77,31 +77,31 @@ fun AdaptiveButton(
                     Icon(
                         painter = painterResource(startButtonIcon),
                         contentDescription = null,
-                        tint = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.black,
+                        tint = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.textTitle,
                         modifier = Modifier
                             .padding(end = 8.dp)
-                            .size(12.dp)
+                            .size(16.dp)
                     )
                 }
 
                 Text(
                     text = buttonText,
                     style = DevAssistantTheme.typography.answerOptionText.copy(
-                        fontSize = 12.sp,
+                        fontSize = 16.sp,
                         fontWeight = FontWeight.Normal,
                         textAlign = TextAlign.Center,
                     ),
-                    color = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.black
+                    color = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.textTitle
                 )
 
                 if (endButtonIcon != null) {
                     Icon(
                         painter = painterResource(endButtonIcon),
                         contentDescription = null,
-                        tint = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.black,
+                        tint = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.textTitle,
                         modifier = Modifier
                             .padding(start = 8.dp)
-                            .size(12.dp)
+                            .size(16.dp)
                     )
                 }
             }
@@ -111,7 +111,7 @@ fun AdaptiveButton(
 
 @Preview(showBackground = true)
 @Composable
-fun AdaptiveButtonPreview() {
+private fun AdaptiveButtonPreview() {
     DevAssistantAITheme() {
         AdaptiveButton(
             buttonText = "Назад",

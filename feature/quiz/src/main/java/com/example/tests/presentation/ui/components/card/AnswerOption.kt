@@ -35,7 +35,7 @@ fun AnswerOption(
     val color = stateAnswerOptions(state)
     
     Card(
-        border = BorderStroke(1.6.dp, color.border.copy(alpha = 0.75f)),
+        border = BorderStroke(1.4.dp, color.border.copy(alpha = 0.75f)),
         colors = CardDefaults.cardColors(
             color.background),
         modifier = modifier
@@ -57,7 +57,7 @@ fun AnswerOption(
                         shape = CircleShape,
                     )
                     .border(
-                        width = 1.6.dp,
+                        width = 1.4.dp,
                         color = color.labelBorder.copy(alpha = 0.75f),
                         shape = CircleShape
                     )
@@ -83,7 +83,7 @@ fun AnswerOption(
 
 @Preview(showBackground = true)
 @Composable
-fun AnswerOptionPreview() {
+private fun AnswerOptionPreview() {
     DevAssistantAITheme {
         Column {
             AnswerOption(

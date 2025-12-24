@@ -10,6 +10,7 @@ import com.example.ai_chat.ChatAIScreen
 import com.example.devassistantai.presentation.ui.HomeScreenContainer
 import com.example.profile.ProfileScreen
 import com.example.settings.SettingsScreen
+import com.example.tests.presentation.QuizRoute
 import com.example.tests.presentation.QuizScreen
 import com.example.theory.subject.TheoryScreen
 
@@ -34,7 +35,7 @@ fun DevAssistantNavHost(
             TheoryScreen()
         }
         composable(route = Quiz.route) {
-            QuizScreen()
+            QuizRoute()
         }
         composable(route = Profile.route) {
             ProfileScreen()

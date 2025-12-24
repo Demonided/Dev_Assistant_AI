@@ -128,13 +128,13 @@ fun TopQuizBar(
 
 @Preview(showBackground = true)
 @Composable
-fun TopQuizBarPreview() {
+private fun TopQuizBarPreview() {
     DevAssistantAITheme {
         TopQuizBar(
             quizProgress = QuizProgressUiModel(
                 current = 7,
                 total = 10,
-                selectedAnswer = 3
+                selectedAnswer = 4
             ),
             nameQuiz = "Kotlin Quiz",
             modifier = Modifier

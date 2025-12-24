@@ -31,15 +31,15 @@ fun CardWithQuestionChoosingAnswer(
         ),
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 16.dp)
     ) {
         Column(
             modifier = Modifier
-                .padding(vertical = 8.dp)
+                .padding(horizontal = 10.dp, vertical = 12.dp)
         ) {
             Text(
                 text = question.question,
                 style = DevAssistantTheme.typography.quizQuestionText,
+                color = DevAssistantTheme.colors.textTitle,
                 modifier = Modifier
                     .padding(horizontal = 16.dp, vertical = 12.dp)
             )
@@ -69,6 +69,7 @@ private fun CardWithQuestionChoosingAnswerPreview() {
             question = answerOption,
             answerState = AnswerState.DEFAULT,
             modifier = Modifier
+                .padding(horizontal = 24.dp, vertical = 24.dp)
         )
     }
 }

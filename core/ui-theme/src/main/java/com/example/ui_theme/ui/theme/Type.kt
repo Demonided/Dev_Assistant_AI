@@ -24,16 +24,16 @@ data class DevAssistantTypography(
         fontWeight = FontWeight.Normal,
         textAlign = TextAlign.Start,
         color = Color.White,
-        fontSize = 20.sp,
-        lineHeight = 26.sp,
+        fontSize = 16.sp,
+        lineHeight = 20.sp,
     ),
 
     val quizQuestionText: TextStyle = TextStyle(
         fontFamily = enterFamily,
         fontWeight = FontWeight.Normal,
         textAlign = TextAlign.Start,
-        fontSize = 20.sp,
-        lineHeight = 30.sp,
+        fontSize = 18.sp,
+        lineHeight = 22.sp,
     ),
 )
 
