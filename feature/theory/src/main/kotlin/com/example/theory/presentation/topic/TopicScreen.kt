@@ -1,6 +1,7 @@
 package com.example.theory.presentation.topic
 
 import android.content.res.Configuration
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -17,6 +18,7 @@ import com.example.theory.presentation.topic.ui.components.TopicCard
 import com.example.theory.presentation.topic.ui.components.TopicHeaderComponent
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantGradient
+import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
 fun TopicScreen(
@@ -24,7 +26,9 @@ fun TopicScreen(
     onBackButtonClick: () -> Unit
 ) {
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = DevAssistantTheme.colors.appBackground),
     ) {
         TopicHeaderComponent(
             colors = DevAssistantGradient.purple(),
