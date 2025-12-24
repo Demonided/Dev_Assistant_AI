@@ -129,7 +129,7 @@ fun TopicCard(
 @Preview(showBackground = true)
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun TopicCardPreview() {
+private fun TopicCardPreview() {
     DevAssistantAITheme {
         TopicCard(
             topicData = TopicModel(

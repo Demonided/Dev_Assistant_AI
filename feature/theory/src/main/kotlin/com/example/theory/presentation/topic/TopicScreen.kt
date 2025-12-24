@@ -55,7 +55,7 @@ fun TopicScreen(
 @Preview(showBackground = true)
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun TopicScreenPreview() {
+private fun TopicScreenPreview() {
     DevAssistantAITheme {
         TopicScreen {}
     }

@@ -40,7 +40,7 @@ fun SubjectScreen(
 @Preview(showBackground = true)
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun HomeScreenPreview() {
+private fun HomeScreenPreview() {
     DevAssistantAITheme {
         SubjectScreen {}
     }

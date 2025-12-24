@@ -31,7 +31,7 @@ fun HeaderComponent(
 @Composable
 @Preview(showBackground = true)
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
-fun HeaderComponentPreview() {
+private fun HeaderComponentPreview() {
     DevAssistantAITheme {
         HeaderComponent(
             modifier = Modifier
