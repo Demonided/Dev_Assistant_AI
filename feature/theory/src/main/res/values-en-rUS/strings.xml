@@ -6,4 +6,8 @@
     <string name="progress">Progress</string>
     <string name="streak">Streak</string>
     <string name="questions">questiona</string>
+    <string name="start_preparation">Start your preparation for interview</string>
+    <string name="select_topic">Select topic</string>
+    <string name="back">Back</string>
+
 </resources>

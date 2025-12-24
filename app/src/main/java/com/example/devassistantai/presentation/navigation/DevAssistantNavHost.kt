@@ -12,7 +12,8 @@ import com.example.profile.ProfileScreen
 import com.example.settings.SettingsScreen
 import com.example.tests.presentation.QuizRoute
 import com.example.tests.presentation.QuizScreen
-import com.example.theory.subject.TheoryScreen
+import com.example.theory.presentation.subject.SubjectScreen
+import com.example.theory.presentation.topic.TopicScreen
 
 @Composable
 fun DevAssistantNavHost(
@@ -32,7 +33,9 @@ fun DevAssistantNavHost(
             ChatAIScreen()
         }
         composable(route = Theory.route) {
-            TheoryScreen()
+            SubjectScreen(
+                onSubjectClick = { navController.navigate(TheoryTopic.route) }
+            )
         }
         composable(route = Quiz.route) {
             QuizRoute()
@@ -42,6 +45,11 @@ fun DevAssistantNavHost(
         }
         composable(route = Settings.route) {
             SettingsScreen()
+        }
+        composable(route = TheoryTopic.route) {
+            TopicScreen(
+                onBackButtonClick = { navController.navigate(Theory.route) }
+            )
         }
     }
 }
