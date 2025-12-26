@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tests.domain.model.AnswerState
@@ -91,7 +92,7 @@ fun QuizScreen(
                     .padding(vertical = 30.dp)
             ) {
                 AdaptiveButton(
-                    buttonText = "Назад",
+                    buttonText = stringResource(R.string.button_back),
                     startButtonIcon = R.drawable.icon_arrow_back,
                     isEnable = isEnableBack,
                     onClick = onClickBack,
@@ -102,7 +103,7 @@ fun QuizScreen(
                 Spacer(modifier = Modifier.width(16.dp))
 
                 AdaptiveButton(
-                    buttonText = "Дальше",
+                    buttonText = stringResource(R.string.button_next),
                     endButtonIcon = R.drawable.icon_arrow_next,
                     isEnable = isEnableNext,
                     onClick = onClickNext,
