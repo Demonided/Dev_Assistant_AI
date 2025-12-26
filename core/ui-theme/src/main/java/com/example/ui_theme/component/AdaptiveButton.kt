@@ -1,5 +1,6 @@
 package com.example.ui_theme.component
 
+import android.content.res.Configuration
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -73,16 +74,10 @@ fun AdaptiveButton(
                 modifier = Modifier
                     .fillMaxSize()
             ) {
-                if (startButtonIcon != null) {
-                    Icon(
-                        painter = painterResource(startButtonIcon),
-                        contentDescription = null,
-                        tint = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.textTitle,
-                        modifier = Modifier
-                            .padding(end = 8.dp)
-                            .size(16.dp)
-                    )
-                }
+                NavigationIconButton(
+                    drawable = startButtonIcon,
+                    isGradient = isGradient
+                )
 
                 Text(
                     text = buttonText,
@@ -94,22 +89,31 @@ fun AdaptiveButton(
                     color = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.textTitle
                 )
 
-                if (endButtonIcon != null) {
-                    Icon(
-                        painter = painterResource(endButtonIcon),
-                        contentDescription = null,
-                        tint = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.textTitle,
-                        modifier = Modifier
-                            .padding(start = 8.dp)
-                            .size(16.dp)
-                    )
-                }
+                NavigationIconButton(
+                    drawable = endButtonIcon,
+                    isGradient = isGradient
+                )
             }
         }
     }
 }
 
+@Composable
+fun NavigationIconButton(@DrawableRes drawable: Int?, isGradient: Boolean) {
+    drawable?.let { icon ->
+        Icon(
+            painter = painterResource(icon),
+            contentDescription = null,
+            tint = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.textTitle,
+            modifier = Modifier
+                .padding(start = 8.dp)
+                .size(16.dp)
+        )
+    }
+}
+
 @Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun AdaptiveButtonPreview() {
     DevAssistantAITheme() {
