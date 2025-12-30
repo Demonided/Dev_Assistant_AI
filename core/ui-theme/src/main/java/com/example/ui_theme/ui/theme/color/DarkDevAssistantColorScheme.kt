@@ -6,6 +6,7 @@ import com.example.ui_theme.ui.theme.color.DevAssistantColor.Quiz
 
 val DarkDevAssistantColorScheme = DevAssistantColor(
     white = Color(0xFFFFFFFF),
+    black = Color(0xFF181818),
     blackWhite = Color(0xFFFFFFFF),
     whiteBlack = Color(0xFF000000),
     textTitle = Color(0xFFFFFFFF),
@@ -14,7 +15,7 @@ val DarkDevAssistantColorScheme = DevAssistantColor(
     appMediumGradientColor = Color(0xFFF6339A),
     appEndGradient = Color(0xFFFF6500),
     appBackground = Color(0xFF101828),
-    appCardBackground = Color(0xFF282525),
+    appCardBackground = Color(0xFF1A2138),
 
     purpleStartGradientColor = Color(0xFFAD46FF),
     purpleEndGradientColor = Color(0xFF9810FA),
@@ -44,14 +45,14 @@ val DarkDevAssistantColorScheme = DevAssistantColor(
 
     quiz = Quiz(
         backgroundQuizCard = Color(0xFFD3CACA),
-        backgroundSelectedAnswerOption = Color(0xFF3A1E5E).copy(alpha = 0.2f),
-        backgroundCorrectAnswerOption = Color(0xFF048105).copy(alpha = 0.2f),
-        backgroundIncorrectedAnswerOption = Color(0xFF721515).copy(alpha = 0.2f),
-        borderBackgroundSelectedAnswerOption = Color(0xFF3A1E5E),
-        borderBackgroundCorrectAnswerOption = Color(0xFF048105),
-        borderBackgroundIncorrectedAnswerOption = Color(0xFF721515),
-        borderAnswerOption = Color(0xFF6B6868),
-        backgroundLabelSelectedAnswerOption = Color(0xFF3A1E5E),
+        backgroundSelectedAnswerOption = Color(0xFF2A2654).copy(alpha = 0.2f),
+        backgroundCorrectAnswerOption = Color(0xFF66BB6A).copy(alpha = 0.2f),
+        backgroundIncorrectedAnswerOption = Color(0xFFE57373).copy(alpha = 0.2f),
+        borderBackgroundSelectedAnswerOption = Color(0xFF6A5ACD),
+        borderBackgroundCorrectAnswerOption = Color(0xFF66BB6A),
+        borderBackgroundIncorrectedAnswerOption = Color(0xFFE57373),
+        borderAnswerOption = Color(0xFF8A8A8A),
+        backgroundLabelSelectedAnswerOption = Color(0xFF2A2654),
         backgroundLabelAnswerOption = Color(0xFF6B6868),
         quizProgressBar = Color(0xFFD7D2D2),
     )

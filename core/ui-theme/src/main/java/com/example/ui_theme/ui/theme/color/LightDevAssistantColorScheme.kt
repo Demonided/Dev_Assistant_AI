@@ -6,6 +6,7 @@ import com.example.ui_theme.ui.theme.color.DevAssistantColor.Quiz
 
 val LightDevAssistantColorScheme = DevAssistantColor(
     white = Color(0xFFFFFFFF),
+    black = Color(0xFF181818),
     blackWhite = Color(0xFF000000),
     whiteBlack = Color(0xFFFFFFFF),
     textTitle = Color(0xFF000000),
@@ -44,14 +45,14 @@ val LightDevAssistantColorScheme = DevAssistantColor(
 
     quiz = Quiz(
         backgroundQuizCard = Color(0xFFD3CACA),
-        backgroundSelectedAnswerOption = Color(0xFF3A1E5E).copy(alpha = 0.2f),
-        backgroundCorrectAnswerOption = Color(0xFF048105).copy(alpha = 0.2f),
-        backgroundIncorrectedAnswerOption = Color(0xFF721515).copy(alpha = 0.2f),
-        borderBackgroundSelectedAnswerOption = Color(0xFF3A1E5E),
-        borderBackgroundCorrectAnswerOption = Color(0xFF048105),
-        borderBackgroundIncorrectedAnswerOption = Color(0xFF721515),
+        backgroundSelectedAnswerOption = Color(0xFF6A5ACD).copy(alpha = 0.2f),
+        backgroundCorrectAnswerOption = Color(0xFF4CAF50).copy(alpha = 0.2f),
+        backgroundIncorrectedAnswerOption = Color(0xFFE57373).copy(alpha = 0.2f),
+        borderBackgroundSelectedAnswerOption = Color(0xFF6A5ACD),
+        borderBackgroundCorrectAnswerOption = Color(0xFF4CAF50),
+        borderBackgroundIncorrectedAnswerOption = Color(0xFFE57373),
         borderAnswerOption = Color(0xFF6B6868),
-        backgroundLabelSelectedAnswerOption = Color(0xFF3A1E5E),
+        backgroundLabelSelectedAnswerOption = Color(0xFF6A5ACD),
         backgroundLabelAnswerOption = Color(0xFF6B6868),
         quizProgressBar = Color(0xFFD7D2D2),
     )

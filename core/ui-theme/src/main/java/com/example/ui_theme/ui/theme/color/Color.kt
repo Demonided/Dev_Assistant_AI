@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.Color
 
 data class DevAssistantColor(
     val white: Color,
+    val black: Color,
     val blackWhite: Color,
     val whiteBlack: Color,
     val textTitle: Color,

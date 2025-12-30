@@ -1,4 +1,4 @@
-package com.example.tests.presentation.card
+package com.example.tests.presentation.ui.components.card
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Column
@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tests.domain.model.AnswerState
 import com.example.tests.domain.model.QuestionWitchAnswer
-import com.example.tests.presentation.answerLabel
+import com.example.tests.util.answerLabel
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
@@ -31,15 +31,15 @@ fun CardWithQuestionChoosingAnswer(
         ),
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 16.dp)
     ) {
         Column(
             modifier = Modifier
-                .padding(vertical = 8.dp)
+                .padding(horizontal = 10.dp, vertical = 12.dp)
         ) {
             Text(
                 text = question.question,
                 style = DevAssistantTheme.typography.quizQuestionText,
+                color = DevAssistantTheme.colors.textTitle,
                 modifier = Modifier
                     .padding(horizontal = 16.dp, vertical = 12.dp)
             )
@@ -69,6 +69,7 @@ private fun CardWithQuestionChoosingAnswerPreview() {
             question = answerOption,
             answerState = AnswerState.DEFAULT,
             modifier = Modifier
+                .padding(horizontal = 24.dp, vertical = 24.dp)
         )
     }
 }

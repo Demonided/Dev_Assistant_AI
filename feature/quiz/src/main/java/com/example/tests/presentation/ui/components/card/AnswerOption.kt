@@ -1,4 +1,4 @@
-package com.example.tests.presentation.card
+package com.example.tests.presentation.ui.components.card
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -20,8 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tests.domain.model.AnswerState
-import com.example.tests.presentation.ui.components.StateAnswerLabel
-import com.example.tests.presentation.ui.components.stateAnswerOptions
+import com.example.tests.presentation.ui.state.StateAnswerLabel
+import com.example.tests.presentation.ui.state.stateAnswerOptions
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
@@ -35,7 +35,7 @@ fun AnswerOption(
     val color = stateAnswerOptions(state)
     
     Card(
-        border = BorderStroke(1.6.dp, color.border.copy(alpha = 0.75f)),
+        border = BorderStroke(1.4.dp, color.border.copy(alpha = 0.75f)),
         colors = CardDefaults.cardColors(
             color.background),
         modifier = modifier
@@ -57,7 +57,7 @@ fun AnswerOption(
                         shape = CircleShape,
                     )
                     .border(
-                        width = 1.6.dp,
+                        width = 1.4.dp,
                         color = color.labelBorder.copy(alpha = 0.75f),
                         shape = CircleShape
                     )
@@ -83,7 +83,7 @@ fun AnswerOption(
 
 @Preview(showBackground = true)
 @Composable
-fun AnswerOptionPreview() {
+private fun AnswerOptionPreview() {
     DevAssistantAITheme {
         Column {
             AnswerOption(
