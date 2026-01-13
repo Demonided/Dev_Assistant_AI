@@ -73,7 +73,7 @@ fun AppSearchField(
 
 @Composable
 @Preview(showBackground = true)
-fun AppSearchFieldPreview() {
+private fun AppSearchFieldPreview() {
     DevAssistantAITheme {
         AppSearchField("", {})
     }

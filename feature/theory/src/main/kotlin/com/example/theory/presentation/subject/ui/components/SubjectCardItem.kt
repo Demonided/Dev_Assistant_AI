@@ -50,7 +50,6 @@ fun SubjectCardItem(
     Card(
         modifier = modifier
             .fillMaxWidth()
-
             .border(
                 width = 1.dp,
                 color = DevAssistantTheme.colors.appCardColor.border,
@@ -146,7 +145,7 @@ fun SubjectCardItem(
 @Composable
 @Preview(showBackground = true)
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
-fun TheoryCardItemPreview() {
+private fun TheoryCardItemPreview() {
     DevAssistantAITheme {
         Box(
             modifier = Modifier

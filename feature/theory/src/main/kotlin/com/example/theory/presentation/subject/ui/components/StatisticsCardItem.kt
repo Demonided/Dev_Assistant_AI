@@ -114,7 +114,7 @@ fun StatItem(
 @Preview(showBackground = true, name = "Light theme", uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(showBackground = true, name = "Dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun StatisticsCardPreview() {
+private fun StatisticsCardPreview() {
     DevAssistantAITheme {
         Box(modifier = Modifier.background(DevAssistantTheme.colors.appBackground)) {
             StatisticsCard()

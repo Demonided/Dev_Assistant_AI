@@ -58,7 +58,7 @@ fun SubjectHeaderComponent(
 @Preview(showBackground = true)
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun SubjectHeaderComponentPreview() {
+private fun SubjectHeaderComponentPreview() {
     DevAssistantAITheme {
         SubjectHeaderComponent { _ -> }
     }

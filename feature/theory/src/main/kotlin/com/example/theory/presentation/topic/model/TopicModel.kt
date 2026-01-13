@@ -1,10 +1,14 @@
 package com.example.theory.presentation.topic.model
 
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+
 data class TopicModel(
     val id: String,
-    val number: String,
+    val orderNumber: Int,
     val title: String,
-    val description: String,
     val duration: Int,
-    val isCompleted: Boolean
+    val isCompleted: Boolean,
+    val colors: List<Color>,
+    val icon: ImageVector
 )
