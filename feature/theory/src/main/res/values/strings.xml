@@ -9,5 +9,6 @@
     <string name="select_topic">Выберите тему</string>
     <string name="back">Назад</string>
     <string name="completed">Завершено</string>
+    <string name="duration_measure_min">мин</string>
 
 </resources>

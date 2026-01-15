@@ -21,12 +21,8 @@ class TopicViewModel @Inject constructor(
                 id = "1",
                 orderNumber = 1,
                 title = "Kotlin basic",
-                duration = 15,
+                duration = 40,
                 isCompleted = true,
-                colors = listOf(
-                    Color(0xFFad46ff),
-                    Color(0xFF9810fa)
-                ),
                 icon = Icons.Default.Home
             ),
             TopicModel(
@@ -35,27 +31,29 @@ class TopicViewModel @Inject constructor(
                 title = "Null safety",
                 duration = 15,
                 isCompleted = true,
-                colors = listOf(
-                    Color(0xFFad46ff),
-                    Color(0xFF9810fa)
-                ),
                 icon = Icons.Default.Home
             ),
             TopicModel(
                 id = "3",
                 orderNumber = 3,
                 title = "Classes and Objects",
-                duration = 15,
+                duration = 25,
                 isCompleted = false,
-                colors = listOf(
-                    Color(0xFFad46ff),
-                    Color(0xFF9810fa)
-                ),
                 icon = Icons.Default.Home
             )
         )
+        val topicState = TopicState(
+            name = "Kotlin",
+            description = "Kotlin syntax cor",
+            duration = 80,
+            color = listOf(
+                Color(0xFFad46ff),
+                Color(0xFF9810fa)
+            ),
+            topics = stubTopicList
+        )
         updateState {
-            copy(topics = stubTopicList)
+            topicState
         }
     }
 

@@ -40,6 +40,7 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 fun TopicCard(
     modifier: Modifier = Modifier,
     topicData: TopicModel,
+    colors: List<Color>,
     onClick: (String) -> Unit
 ) {
     Card(
@@ -71,7 +72,7 @@ fun TopicCard(
                     modifier = Modifier
                         .size(40.dp)
                         .clip(RoundedCornerShape(8.dp))
-                        .background(Brush.linearGradient(colors = topicData.colors)),
+                        .background(Brush.linearGradient(colors = colors)),
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
@@ -114,7 +115,7 @@ fun TopicCard(
                                         shape = RoundedCornerShape(10.dp)
                                     )
                                     .padding(start = 8.dp, top = 4.dp, end = 8.dp, bottom = 4.dp),
-                                color = topicData.colors.first()
+                                color = colors.last()
                             )
                         }
 
@@ -144,9 +145,9 @@ private fun TopicCardPreview() {
                 title = "Kotlin base syntax",
                 duration = 15,
                 isCompleted = true,
-                colors = DevAssistantGradient.purple(),
                 icon = Icons.Default.Home
             ),
+            colors = DevAssistantGradient.purple(),
             onClick = {}
         )
     }

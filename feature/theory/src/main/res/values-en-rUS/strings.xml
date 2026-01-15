@@ -10,5 +10,6 @@
     <string name="select_topic">Select topic</string>
     <string name="back">Back</string>
     <string name="completed">Completed</string>
+    <string name="duration_measure_min">minutes</string>
 
 </resources>
