@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,6 +27,8 @@ fun TopicScreen(
     viewModel: TopicViewModel = hiltViewModel(),
     onBackButtonClick: () -> Unit
 ) {
+    val state by viewModel.state.collectAsState()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -32,8 +36,9 @@ fun TopicScreen(
     ) {
         TopicHeaderComponent(
             colors = DevAssistantGradient.purple(),
-            subject = "Kotlin",
-            topic = "Основы синтаксиса Kotlin",
+            subject = state.name,
+            topic = state.description,
+            duration = state.duration,
             onBackButtonClick = onBackButtonClick
         )
 
@@ -45,6 +50,7 @@ fun TopicScreen(
             items(viewModel.state.value.topics) { topic ->
                 TopicCard(
                     topicData = topic,
+                    colors = state.color,
                     onClick = {}
                 )
             }

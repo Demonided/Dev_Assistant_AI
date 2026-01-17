@@ -1,6 +1,5 @@
 package com.example.theory.presentation.topic.model
 
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 
 data class TopicModel(
@@ -9,6 +8,5 @@ data class TopicModel(
     val title: String,
     val duration: Int,
     val isCompleted: Boolean,
-    val colors: List<Color>,
     val icon: ImageVector
 )

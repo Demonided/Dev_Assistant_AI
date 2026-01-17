@@ -25,9 +25,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.theory.R
 import com.example.theory.presentation.topic.model.TopicModel
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantGradient
@@ -37,6 +40,7 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 fun TopicCard(
     modifier: Modifier = Modifier,
     topicData: TopicModel,
+    colors: List<Color>,
     onClick: (String) -> Unit
 ) {
     Card(
@@ -68,7 +72,7 @@ fun TopicCard(
                     modifier = Modifier
                         .size(40.dp)
                         .clip(RoundedCornerShape(8.dp))
-                        .background(Brush.linearGradient(colors = topicData.colors)),
+                        .background(Brush.linearGradient(colors = colors)),
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
@@ -101,17 +105,20 @@ fun TopicCard(
                             fontSize = 14.sp,
                         )
                         Spacer(modifier = Modifier.width(20.dp))
-                        Text(
-                            text = "Завершено",
-                            fontSize = 14.sp,
-                            modifier = Modifier
-                                .background(
-                                    brush = Brush.linearGradient(colors = topicData.colors),
-                                    shape = RoundedCornerShape(10.dp)
-                                )
-                                .padding(start = 8.dp, top = 4.dp, end = 8.dp, bottom = 4.dp),
-                            color = DevAssistantTheme.colors.white
-                        )
+                        if (topicData.isCompleted) {
+                            Text(
+                                text = stringResource(R.string.completed),
+                                fontSize = 14.sp,
+                                modifier = Modifier
+                                    .background(
+                                        color = Color.Gray.copy(alpha = 0.2f),
+                                        shape = RoundedCornerShape(10.dp)
+                                    )
+                                    .padding(start = 8.dp, top = 4.dp, end = 8.dp, bottom = 4.dp),
+                                color = colors.last()
+                            )
+                        }
+
                     }
                 }
                 Column {
@@ -138,9 +145,9 @@ private fun TopicCardPreview() {
                 title = "Kotlin base syntax",
                 duration = 15,
                 isCompleted = true,
-                colors = DevAssistantGradient.purple(),
                 icon = Icons.Default.Home
             ),
+            colors = DevAssistantGradient.purple(),
             onClick = {}
         )
     }

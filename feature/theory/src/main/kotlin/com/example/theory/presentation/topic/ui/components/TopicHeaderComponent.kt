@@ -8,8 +8,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.theory.R
 import com.example.theory.common.ui.components.HeaderComponent
 import com.example.ui_theme.extantion.angleLinearGradient
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
@@ -21,6 +23,7 @@ fun TopicHeaderComponent(
     colors: List<Color>,
     subject: String,
     topic: String,
+    duration: Int,
     onBackButtonClick: () -> Unit
 ) {
     HeaderComponent(
@@ -56,7 +59,7 @@ fun TopicHeaderComponent(
         )
         Text(
             color = Color.White,
-            text = "15 мин"
+            text = "$duration ${stringResource(R.string.duration_measure_min)}"
         )
     }
 }
@@ -69,6 +72,7 @@ private fun TopicHeaderComponentPreview() {
         TopicHeaderComponent(
             colors = DevAssistantGradient.purple(),
             subject = "Kotlin",
+            duration = 60,
             topic = "Основы синтаксиса Kotlin"
         ) {}
     }
