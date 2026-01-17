@@ -7,17 +7,22 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.theory.presentation.topic.ui.components.TopicCard
 import com.example.theory.presentation.topic.ui.components.TopicHeaderComponent
+import com.example.ui_theme.R.drawable
+import com.example.ui_theme.component.AdaptiveButton
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantGradient
 import com.example.ui_theme.ui.theme.DevAssistantTheme
@@ -52,6 +57,18 @@ fun TopicScreen(
                     topicData = topic,
                     colors = state.color,
                     onClick = {}
+                )
+            }
+
+            item {
+                AdaptiveButton(
+                    modifier = Modifier
+                        .padding(top = 20.dp)
+                        .align(alignment = Alignment.End),
+                    buttonText = stringResource(com.example.theory.R.string.start_testing),
+                    startButtonIcon = drawable.play,
+                    isGradient = true,
+                    isEnable = false,
                 )
             }
         }

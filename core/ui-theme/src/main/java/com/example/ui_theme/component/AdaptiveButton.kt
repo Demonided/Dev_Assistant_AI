@@ -9,14 +9,11 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -106,7 +103,7 @@ fun NavigationIconButton(@DrawableRes drawable: Int?, isGradient: Boolean) {
             contentDescription = null,
             tint = if (isGradient) DevAssistantTheme.colors.white else DevAssistantTheme.colors.textTitle,
             modifier = Modifier
-                .padding(start = 8.dp)
+                .padding(start = 8.dp, end = 8.dp)
                 .size(16.dp)
         )
     }
