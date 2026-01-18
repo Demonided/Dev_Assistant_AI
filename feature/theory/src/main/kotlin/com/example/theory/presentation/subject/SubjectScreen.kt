@@ -10,6 +10,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.theory.R
@@ -36,8 +37,8 @@ fun SubjectScreen(
     ) {
         DevAssistantHeader(
             showBackButton = false,
-            title = R.string.select_topic,
-            subTitle = R.string.start_preparation,
+            title = stringResource(R.string.select_topic),
+            subTitle = stringResource(R.string.start_preparation),
             background = DevAssistantGradient.primary()
         ) {
             AppSearchField(

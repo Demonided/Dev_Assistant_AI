@@ -1,6 +1,5 @@
 package com.example.theory.common.ui.components
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Spacer
@@ -18,6 +17,7 @@ import androidx.compose.ui.unit.sp
 import com.example.theory.R
 import com.example.theory.presentation.subject.ui.components.AppSearchField
 import com.example.theory.presentation.topic.ui.components.BackButton
+import com.example.theory.presentation.topic.ui.components.TopicProgressBar
 import com.example.ui_theme.extantion.angleLinearGradient
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantGradient
@@ -26,8 +26,8 @@ import com.example.ui_theme.ui.theme.DevAssistantGradient
 fun DevAssistantHeader(
     modifier: Modifier = Modifier,
     showBackButton: Boolean = false,
-    @StringRes title: Int? = null,
-    @StringRes subTitle: Int? = null,
+    title: String? = null,
+    subTitle: String? = null,
     background: List<Color> = emptyList(),
     onBackButtonClick: () -> Unit = {},
     content: @Composable (ColumnScope.() -> Unit)? = null
@@ -54,18 +54,18 @@ fun DevAssistantHeader(
 
         title?.let {
             Text(
-                modifier = Modifier.padding(bottom = 10.dp),
+                modifier = Modifier.padding(bottom = 5.dp),
                 color = Color.White,
-                fontSize = 14.sp,
-                text = stringResource(it)
+                fontSize = 16.sp,
+                text = it
             )
         }
 
         subTitle?.let {
             Text(
                 color = Color.White.copy(alpha = 0.7f),
-                fontSize = 12.sp,
-                text = stringResource(it)
+                fontSize = 14.sp,
+                text = it
             )
         }
 
@@ -84,8 +84,8 @@ private fun SubjectHeaderPreview() {
     DevAssistantAITheme {
         DevAssistantHeader(
             showBackButton = false,
-            title = R.string.select_topic,
-            subTitle = R.string.start_preparation,
+            title = stringResource(R.string.select_topic),
+            subTitle = stringResource(R.string.start_preparation),
             background = DevAssistantGradient.primary()
         ) {
             AppSearchField(
