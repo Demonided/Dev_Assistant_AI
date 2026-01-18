@@ -95,3 +95,22 @@ private fun SubjectHeaderPreview() {
         }
     }
 }
+
+@Composable
+@Preview(showBackground = true)
+private fun TopicHeaderPreview() {
+    DevAssistantAITheme {
+        DevAssistantHeader(
+            showBackButton = true,
+            title = "Kotlin",
+            subTitle = "Basics of the Kotlin programming language for Android development",
+            background = DevAssistantGradient.purple(),
+            onBackButtonClick = {}
+        ) {
+            TopicProgressBar(
+                total = 5,
+                completed = 2
+            )
+        }
+    }
+}
