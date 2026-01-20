@@ -69,6 +69,7 @@ fun ArticleScreen(
                         shape = RoundedCornerShape(size = 10.dp)
                     )
             ) {
+                //todo: move article title to model
                 Text(
                     modifier = Modifier.padding(10.dp),
                     text = "Переменные",
