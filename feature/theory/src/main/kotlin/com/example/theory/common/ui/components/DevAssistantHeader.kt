@@ -114,3 +114,17 @@ private fun TopicHeaderPreview() {
         }
     }
 }
+
+@Composable
+@Preview(showBackground = true)
+private fun ArticleHeaderPreview() {
+    DevAssistantAITheme {
+        DevAssistantHeader(
+            showBackButton = true,
+            title = "Basics of the Kotlin programming language for Android development",
+            subTitle = "15 мин",
+            background = DevAssistantGradient.purple(),
+            onBackButtonClick = {}
+        )
+    }
+}

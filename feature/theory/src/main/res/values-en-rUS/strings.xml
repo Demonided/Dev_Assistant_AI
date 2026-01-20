@@ -12,5 +12,6 @@
     <string name="completed">Completed</string>
     <string name="duration_measure_min">minutes</string>
     <string name="start_testing">Start testing</string>
+    <string name="lesson_completed">Lesson is completed</string>
 
 </resources>
