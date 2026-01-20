@@ -31,6 +31,7 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 @Composable
 fun TopicScreen(
     viewModel: TopicViewModel = hiltViewModel(),
+    onTopicCLick: (String) -> Unit,
     onBackButtonClick: () -> Unit
 ) {
     val state by viewModel.state.collectAsState()
@@ -62,7 +63,7 @@ fun TopicScreen(
                 TopicCard(
                     topicData = topic,
                     colors = state.color,
-                    onClick = {}
+                    onClick = onTopicCLick
                 )
             }
 
@@ -86,6 +87,9 @@ fun TopicScreen(
 @Composable
 private fun TopicScreenPreview() {
     DevAssistantAITheme {
-        TopicScreen {}
+        TopicScreen(
+            onTopicCLick = {},
+            onBackButtonClick = {}
+        )
     }
 }
