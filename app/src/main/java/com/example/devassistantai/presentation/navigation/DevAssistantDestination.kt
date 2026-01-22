@@ -32,5 +32,9 @@ object TheoryTopic : DevAssistantDestination {
     override val route = "theory/topic"
 }
 
+object Article : DevAssistantDestination {
+    override val route = "article"
+}
+
 val devAssistantBottomTabRowScreens =
-    listOf(Theory.route, Quiz.route, ChatAI.route, Profile.route, Settings.route, TheoryTopic.route)
+    listOf(Theory.route, Quiz.route, ChatAI.route, Profile.route, Settings.route, TheoryTopic.route, Article.route)

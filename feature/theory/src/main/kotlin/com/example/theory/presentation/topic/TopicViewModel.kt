@@ -45,7 +45,6 @@ class TopicViewModel @Inject constructor(
         val topicState = TopicState(
             name = "Kotlin",
             description = "Kotlin syntax cor",
-            duration = 80,
             color = listOf(
                 Color(0xFFad46ff),
                 Color(0xFF9810fa)

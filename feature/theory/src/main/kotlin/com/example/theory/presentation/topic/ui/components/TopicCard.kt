@@ -3,6 +3,7 @@ package com.example.theory.presentation.topic.ui.components
 import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -52,7 +53,8 @@ fun TopicCard(
                 shape = RoundedCornerShape(14.dp)
             )
             .clip(RoundedCornerShape(14.dp))
-            .background(color = DevAssistantTheme.colors.appCardBackground),
+            .background(color = DevAssistantTheme.colors.appCardBackground)
+            .clickable { onClick(topicData.id) },
         colors = CardDefaults.cardColors(
             DevAssistantTheme.colors.appCardColor.background
         ),

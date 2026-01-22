@@ -11,7 +11,7 @@ import com.example.devassistantai.presentation.ui.HomeScreenContainer
 import com.example.profile.ProfileScreen
 import com.example.settings.SettingsScreen
 import com.example.tests.presentation.QuizRoute
-import com.example.tests.presentation.QuizScreen
+import com.example.theory.presentation.article.ArticleScreen
 import com.example.theory.presentation.subject.SubjectScreen
 import com.example.theory.presentation.topic.TopicScreen
 
@@ -48,7 +48,13 @@ fun DevAssistantNavHost(
         }
         composable(route = TheoryTopic.route) {
             TopicScreen(
+                onTopicCLick = { navController.navigate(Article.route) },
                 onBackButtonClick = { navController.navigate(Theory.route) }
+            )
+        }
+        composable(route = Article.route) {
+            ArticleScreen(
+                onBackButtonClick = { navController.navigate((TheoryTopic.route)) },
             )
         }
     }

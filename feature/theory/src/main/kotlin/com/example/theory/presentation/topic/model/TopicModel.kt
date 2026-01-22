@@ -8,5 +8,5 @@ data class TopicModel(
     val title: String,
     val duration: Int,
     val isCompleted: Boolean,
-    val icon: ImageVector
+    val icon: ImageVector,
 )
