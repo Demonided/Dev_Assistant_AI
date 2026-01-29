@@ -48,7 +48,6 @@ dependencies {
     implementation(projects.core.uiTheme)
     implementation(projects.core.aiSdk)
     implementation(projects.core.common)
-    implementation(projects.data.user)
     implementation(projects.feature.aiChat)
     implementation(projects.feature.profile)
     implementation(projects.feature.quiz)

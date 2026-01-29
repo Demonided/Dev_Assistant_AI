@@ -41,7 +41,6 @@ android {
 dependencies {
     implementation(projects.core.common)
     implementation(projects.core.uiTheme)
-    implementation(projects.domain.theory)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
