@@ -1,4 +1,4 @@
-package com.devassistantai.domain.model
+package com.devassistantai.domain.model.theory
 
 data class Subject(
     val id: String,

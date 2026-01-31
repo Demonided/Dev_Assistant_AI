@@ -19,7 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.theory.R
-import com.example.theory.presentation.subject.data.SubjectState
+import com.example.theory.common.ui.components.data.SubjectState
 import com.example.theory.presentation.subject.ui.model.StatisticsModel
 import com.example.theory.presentation.subject.ui.model.SubjectModel
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
