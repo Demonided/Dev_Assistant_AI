@@ -53,6 +53,7 @@ dependencies {
     implementation(projects.feature.quiz)
     implementation(projects.feature.settings)
     implementation(projects.feature.theory)
+    implementation(projects.domain)
 
     // Android
     implementation(libs.androidx.core.ktx)
