@@ -54,6 +54,7 @@ dependencies {
     implementation(projects.feature.settings)
     implementation(projects.feature.theory)
     implementation(projects.domain)
+    implementation(projects.data)
 
     // Android
     implementation(libs.androidx.core.ktx)
