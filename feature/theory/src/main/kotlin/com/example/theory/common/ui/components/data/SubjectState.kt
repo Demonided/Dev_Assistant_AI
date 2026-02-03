@@ -9,7 +9,7 @@ data class SubjectState(
     val isStatisticsLoading: Boolean,
     var subjectItems: List<SubjectModel>,
     val statisticsModel: StatisticsModel,
-    val errorMessage: String?
+    val errorMessage: String? = null
 ) : BaseViewState {
     companion object {
         val DEFAULT = SubjectState(

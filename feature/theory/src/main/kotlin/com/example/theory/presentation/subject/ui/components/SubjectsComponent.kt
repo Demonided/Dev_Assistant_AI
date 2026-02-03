@@ -122,6 +122,8 @@ private fun SubjectsComponentPreview() {
     DevAssistantAITheme {
         SubjectsComponent(
             subjects = SubjectState(
+                isStatisticsLoading = false,
+                isSubjectsLoading = false,
                 subjectItems = subjects,
                 statisticsModel = statisticsModel
             ),
