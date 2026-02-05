@@ -744,7 +744,7 @@ style:
         active: true
     UseCheckOrError:
         active: true
-    # Выключено, потому что data-классы не всегда нужно использовать, если
+  # Выключено, потому что data-классы не всегда нужно использовать, если
     # класс хранит в себе только данные.
     UseDataClass:
         active: false
@@ -777,7 +777,7 @@ style:
         excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**' ]
 
 libraries:
-    # Выключено, потому что наши core-модули могут выставлять наружу data class-ы
+  # Выключено, потому что наши core-модули могут выставлять наружу data class-ы
     ForbiddenPublicDataClass:
         active: false
         excludes: [ '**' ]
