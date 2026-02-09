@@ -45,6 +45,7 @@ android {
 
 dependencies {
     // Modules
+    implementation(projects.core.di)
     implementation(projects.core.uiTheme)
     implementation(projects.core.aiSdk)
     implementation(projects.core.common)

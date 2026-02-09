@@ -52,6 +52,7 @@ fun QuizRoute() {
         modifier = Modifier
     )
 }
+
 @Composable
 fun QuizScreen(
     listQuestion: List<QuestionWitchAnswer>,
@@ -150,3 +151,14 @@ private fun QuizScreenPreview() {
         )
     }
 }
+
+data class StateQ(
+    val isLoading: Boolean = false,
+    val totalQuestions: Int = 0,
+    val currentQuestion: Int = 0,
+    val answers: List<String> = emptyList(),
+    val selectedAnswer: Int = -1,
+    val answerState: AnswerState = AnswerState.DEFAULT,
+    val quizProgress: QuizProgressUiModel = QuizProgressUiModel(0, 0, 0),
+    val nameQuiz: String = ""
+)
