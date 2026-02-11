@@ -1,19 +1,16 @@
 package com.devassistantai.data.di
 
-import com.devassistantai.data.repository.MockProfileRepository
+import com.devassistantai.data.repository.mock.MockProfileRepositoryImpl
 import com.devassistantai.domain.repository.ProfileRepositoryApi
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ProfileDataModule {
+interface ProfileDataModule {
 
-    @Provides
-    @Singleton
-    fun providesMockProfileRepository(): ProfileRepositoryApi =
-        MockProfileRepository()
+    @Binds
+    fun bindMockProfileRepository(impl: MockProfileRepositoryImpl): ProfileRepositoryApi
 }

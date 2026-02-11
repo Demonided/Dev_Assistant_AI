@@ -1,11 +1,12 @@
-package com.devassistantai.data.repository
+package com.devassistantai.data.repository.mock
 
 import com.devassistantai.domain.model.theory.Subject
 import com.devassistantai.domain.repository.TheoryRepositoryApi
+import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
-class MockTheoryRepositoryImpl : TheoryRepositoryApi {
+class MockSubjectRepositoryImpl @Inject constructor() : TheoryRepositoryApi {
 
     override suspend fun getAll(): Flow<List<Subject>> {
         return flowOf(getMockSubjects())

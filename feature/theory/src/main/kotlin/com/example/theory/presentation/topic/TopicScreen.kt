@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -18,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.theory.common.ui.components.DevAssistantHeader
 import com.example.theory.presentation.topic.ui.components.TopicCard
@@ -34,49 +36,68 @@ fun TopicScreen(
     onTopicCLick: (String) -> Unit,
     onBackButtonClick: () -> Unit
 ) {
+    val subjectTitle = "Kotlin"
+    val subjectDescription = "Kotlin language"
+    viewModel.loadData("1", subjectTitle = subjectTitle, subjectDescription = subjectDescription)
+
     val state by viewModel.state.collectAsState()
+
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(color = DevAssistantTheme.colors.appBackground),
     ) {
-        DevAssistantHeader(
-            showBackButton = true,
-            title = state.name,
-            subTitle = state.description,
-            background = DevAssistantGradient.purple(),
-            onBackButtonClick = onBackButtonClick
-        ) {
-            TopicProgressBar(
-                total = state.topics.size,
-                completed = state.topics.filter { topic -> topic.isCompleted }.size,
-            )
-        }
-
-        LazyColumn(
-            modifier = Modifier.fillMaxWidth(),
-            contentPadding = PaddingValues(10.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            items(viewModel.state.value.topics) { topic ->
-                TopicCard(
-                    topicData = topic,
-                    colors = state.color,
-                    onClick = onTopicCLick
+        if (state.isLoading) {
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "Loading...",
+                    color = DevAssistantTheme.colors.textTitle,
+                    fontSize = 16.sp
+                )
+            }
+        } else {
+            DevAssistantHeader(
+                showBackButton = true,
+                title = state.subjectName,
+                subTitle = state.subjectDescription,
+                background = DevAssistantGradient.purple(),
+                onBackButtonClick = onBackButtonClick
+            ) {
+                TopicProgressBar(
+                    total = state.topics.size,
+                    completed = state.topics.filter { topic -> topic.isCompleted }.size,
                 )
             }
 
-            item {
-                AdaptiveButton(
-                    modifier = Modifier
-                        .padding(top = 20.dp)
-                        .align(alignment = Alignment.End),
-                    buttonText = stringResource(com.example.theory.R.string.start_testing),
-                    startButtonIcon = drawable.play,
-                    isGradient = true,
-                    isEnable = false,
-                )
+            LazyColumn(
+                modifier = Modifier.fillMaxWidth(),
+                contentPadding = PaddingValues(10.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                items(viewModel.state.value.topics) { topic ->
+                    TopicCard(
+                        topicData = topic,
+                        colors = state.color,
+                        onClick = onTopicCLick
+                    )
+                }
+
+                item {
+                    AdaptiveButton(
+                        modifier = Modifier
+                            .padding(top = 20.dp)
+                            .align(alignment = Alignment.End),
+                        buttonText = stringResource(com.example.theory.R.string.start_testing),
+                        startButtonIcon = drawable.play,
+                        isGradient = true,
+                        isEnable = false,
+                    )
+                }
             }
         }
     }
