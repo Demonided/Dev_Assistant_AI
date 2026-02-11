@@ -1,18 +1,21 @@
 package com.devassistantai.data.di
 
-import com.devassistantai.data.repository.MockTheoryRepositoryImpl
+import com.devassistantai.data.repository.mock.MockSubjectRepositoryImpl
+import com.devassistantai.data.repository.mock.MockTopicRepositoryImpl
 import com.devassistantai.domain.repository.TheoryRepositoryApi
+import com.devassistantai.domain.repository.TopicRepositoryApi
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object TheoryDataModule {
+interface TheoryDataModule {
 
-    @Provides
-    @Singleton
-    fun providesMockTheoryRepository(): TheoryRepositoryApi = MockTheoryRepositoryImpl()
+    @Binds
+    fun bindMockTheoryRepository(impl: MockSubjectRepositoryImpl): TheoryRepositoryApi
+
+    @Binds
+    fun bindMockTopicRepository(impl: MockTopicRepositoryImpl): TopicRepositoryApi
 }

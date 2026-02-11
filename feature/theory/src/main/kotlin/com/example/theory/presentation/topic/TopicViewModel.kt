@@ -1,59 +1,42 @@
 package com.example.theory.presentation.topic
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.ui.graphics.Color
+import androidx.lifecycle.viewModelScope
+import com.devassistantai.domain.usecase.GetAllTopicsBySubjectIdUseCase
 import com.example.com.example.devassistantai.viewmodel.BaseViewModel
+import com.example.theory.presentation.mapper.toTopicModel
 import com.example.theory.presentation.topic.data.TopicState
-import com.example.theory.presentation.topic.model.TopicModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class TopicViewModel @Inject constructor(
-
+    private val getAllTopicsBySubjectIdUseCase: GetAllTopicsBySubjectIdUseCase
 ) : BaseViewModel<TopicState, Nothing>() {
     override fun initialState(): TopicState = TopicState.DEFAULT
 
-    init {
-        val stubTopicList = listOf(
-            TopicModel(
-                id = "1",
-                orderNumber = 1,
-                title = "Kotlin basic",
-                duration = 40,
-                isCompleted = true,
-                icon = Icons.Default.Home
-            ),
-            TopicModel(
-                id = "2",
-                orderNumber = 2,
-                title = "Null safety",
-                duration = 15,
-                isCompleted = true,
-                icon = Icons.Default.Home
-            ),
-            TopicModel(
-                id = "3",
-                orderNumber = 3,
-                title = "Classes and Objects",
-                duration = 25,
-                isCompleted = false,
-                icon = Icons.Default.Home
-            )
-        )
-        val topicState = TopicState(
-            name = "Kotlin",
-            description = "Kotlin syntax cor",
-            color = listOf(
-                Color(0xFFad46ff),
-                Color(0xFF9810fa)
-            ),
-            topics = stubTopicList
-        )
-        updateState {
-            topicState
+    fun loadData(subjectId: String, subjectTitle: String, subjectDescription: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            getAllTopicsBySubjectIdUseCase(subjectId = subjectId)
+                .onStart {
+                    updateState { copy(isLoading = true) }
+                }
+                .catch { error -> updateState { copy(isLoading = false, errorMessage = "Fail to load Topics") } }
+                .collect { topics ->
+                    updateState {
+                        copy(
+                            subjectName = subjectTitle,
+                            subjectDescription = subjectDescription,
+                            topics = topics.toTopicModel(),
+                            isLoading = false,
+                            color = listOf(Color(0xFFad46ff), Color(0xFF9810fa))
+                        )
+                    }
+                }
         }
     }
-
 }

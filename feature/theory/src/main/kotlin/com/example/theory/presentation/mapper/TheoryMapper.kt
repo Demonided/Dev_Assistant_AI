@@ -1,4 +1,4 @@
-package com.example.theory.presentation.subject.mapper
+package com.example.theory.presentation.mapper
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
@@ -12,8 +12,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.devassistantai.domain.model.profile.Statistics
 import com.devassistantai.domain.model.theory.Subject
+import com.devassistantai.domain.model.theory.Topic
 import com.example.theory.presentation.subject.ui.model.StatisticsModel
 import com.example.theory.presentation.subject.ui.model.SubjectModel
+import com.example.theory.presentation.topic.model.TopicModel
 
 fun List<Subject>.toSubjectModel(): List<SubjectModel> {
     return this.map { subject ->
@@ -34,6 +36,19 @@ fun Statistics.toStatisticsModel(): StatisticsModel {
         progress = this.progress,
         streak = this.streak
     )
+}
+
+fun List<Topic>.toTopicModel(): List<TopicModel> {
+    return this.map { topic ->
+        TopicModel(
+            id = topic.id,
+            orderNumber = topic.orderNumber,
+            title = topic.title,
+            duration = topic.duration,
+            isCompleted = topic.isCompleted,
+            icon = getImageVectorFromString(topic.icon)
+        )
+    }
 }
 
 fun getImageVectorFromString(name: String): ImageVector = when (name) {

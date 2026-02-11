@@ -5,17 +5,21 @@ import com.example.com.example.devassistantai.viewmodel.BaseViewState
 import com.example.theory.presentation.topic.model.TopicModel
 
 data class TopicState(
-    val name: String,
-    val description: String,
+    val subjectName: String,
+    val subjectDescription: String,
     val color: List<Color>,
-    val topics: List<TopicModel>
+    val topics: List<TopicModel>,
+    val isLoading: Boolean,
+    val errorMessage: String?
 ) : BaseViewState {
     companion object {
         val DEFAULT = TopicState(
-            name = "",
-            description = "",
+            subjectName = "",
+            subjectDescription = "",
             color = emptyList(),
-            topics = emptyList()
+            topics = emptyList(),
+            isLoading = true,
+            errorMessage = null
         )
     }
 }
