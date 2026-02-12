@@ -1,4 +1,4 @@
-package com.example.theory.presentation.mapper
+package com.example.theory.mapper
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
@@ -13,8 +13,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import com.devassistantai.domain.model.profile.Statistics
 import com.devassistantai.domain.model.theory.Subject
 import com.devassistantai.domain.model.theory.Topic
-import com.example.theory.presentation.subject.ui.model.StatisticsModel
-import com.example.theory.presentation.subject.ui.model.SubjectModel
+import com.example.theory.presentation.subject.model.StatisticsModel
+import com.example.theory.presentation.subject.model.SubjectModel
 import com.example.theory.presentation.topic.model.TopicModel
 
 fun List<Subject>.toSubjectModel(): List<SubjectModel> {

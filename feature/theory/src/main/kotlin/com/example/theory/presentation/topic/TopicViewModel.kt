@@ -4,8 +4,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewModelScope
 import com.devassistantai.domain.usecase.GetAllTopicsBySubjectIdUseCase
 import com.example.com.example.devassistantai.viewmodel.BaseViewModel
-import com.example.theory.presentation.mapper.toTopicModel
-import com.example.theory.presentation.topic.data.TopicState
+import com.example.theory.mapper.toTopicModel
+import com.example.theory.presentation.topic.state.TopicState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.Dispatchers

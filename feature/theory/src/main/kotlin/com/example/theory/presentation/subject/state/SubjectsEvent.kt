@@ -1,4 +1,4 @@
-package com.example.theory.common.ui.components.data
+package com.example.theory.presentation.subject.state
 
 import com.example.com.example.devassistantai.viewmodel.BaseEvent
 

@@ -4,9 +4,9 @@ import androidx.lifecycle.viewModelScope
 import com.devassistantai.domain.usecase.GetStatisticsUseCase
 import com.devassistantai.domain.usecase.GetSubjectsListUseCase
 import com.example.com.example.devassistantai.viewmodel.BaseViewModel
-import com.example.theory.common.ui.components.data.SubjectState
-import com.example.theory.presentation.mapper.toStatisticsModel
-import com.example.theory.presentation.mapper.toSubjectModel
+import com.example.theory.mapper.toStatisticsModel
+import com.example.theory.mapper.toSubjectModel
+import com.example.theory.presentation.subject.state.SubjectState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.flow.catch

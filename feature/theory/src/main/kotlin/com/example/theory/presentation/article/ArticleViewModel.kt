@@ -1,7 +1,7 @@
 package com.example.theory.presentation.article
 
 import com.example.com.example.devassistantai.viewmodel.BaseViewModel
-import com.example.theory.presentation.article.data.ArticleState
+import com.example.theory.presentation.article.state.ArticleState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 

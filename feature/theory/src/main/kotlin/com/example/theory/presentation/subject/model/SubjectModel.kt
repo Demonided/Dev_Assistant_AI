@@ -1,4 +1,4 @@
-package com.example.theory.presentation.subject.ui.model
+package com.example.theory.presentation.subject.model
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector

@@ -1,4 +1,4 @@
-package com.example.theory.presentation.article.data
+package com.example.theory.presentation.article.state
 
 import com.example.com.example.devassistantai.viewmodel.BaseViewState
 

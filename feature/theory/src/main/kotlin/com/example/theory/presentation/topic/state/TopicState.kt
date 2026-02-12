@@ -1,4 +1,4 @@
-package com.example.theory.presentation.topic.data
+package com.example.theory.presentation.topic.state
 
 import androidx.compose.ui.graphics.Color
 import com.example.com.example.devassistantai.viewmodel.BaseViewState
