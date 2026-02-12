@@ -1,6 +1,6 @@
-package com.devassistantai.domain.model.theory
+package com.example.theory.presentation.article.model
 
-data class Article(
+data class ArticleModel(
     val id: String,
     val topicId: String,
     val topicTitle: String,

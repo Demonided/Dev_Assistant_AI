@@ -1,4 +1,4 @@
-package com.example.theory.presentation.subject.ui.model
+package com.example.theory.presentation.subject.model
 
 data class StatisticsModel(
     val learned: Int,
