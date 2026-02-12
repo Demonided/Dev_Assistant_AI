@@ -1,8 +1,10 @@
 package com.devassistantai.domain.di
 
+import com.devassistantai.domain.repository.ArticleRepositoryApi
 import com.devassistantai.domain.repository.TheoryRepositoryApi
 import com.devassistantai.domain.repository.TopicRepositoryApi
 import com.devassistantai.domain.usecase.GetAllTopicsBySubjectIdUseCase
+import com.devassistantai.domain.usecase.GetArticleByTopicIdUseCase
 import com.devassistantai.domain.usecase.GetSubjectsListUseCase
 import dagger.Module
 import dagger.Provides
@@ -23,4 +25,9 @@ object TheoryDomainModule {
     @Singleton
     fun providesGetAllTopicsBySubjectIdUseCase(topicRepository: TopicRepositoryApi): GetAllTopicsBySubjectIdUseCase =
         GetAllTopicsBySubjectIdUseCase(topicRepository)
+
+    @Provides
+    @Singleton
+    fun provideGetArticleByTopicIdUseCase(articleRepositoryApi: ArticleRepositoryApi): GetArticleByTopicIdUseCase =
+        GetArticleByTopicIdUseCase(articleRepositoryApi)
 }
