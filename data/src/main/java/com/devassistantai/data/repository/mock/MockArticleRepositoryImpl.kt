@@ -2,10 +2,11 @@ package com.devassistantai.data.repository.mock
 
 import com.devassistantai.domain.model.theory.Article
 import com.devassistantai.domain.repository.ArticleRepositoryApi
+import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
-class MockArticleRepositoryImpl : ArticleRepositoryApi {
+class MockArticleRepositoryImpl @Inject constructor() : ArticleRepositoryApi {
     override suspend fun getAllByTopicId(topicId: String): Flow<Article> {
         return flowOf(
             getArticles().first { article -> article.topicId == topicId }

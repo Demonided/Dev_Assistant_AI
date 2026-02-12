@@ -36,65 +36,80 @@ fun ArticleScreen(
     viewModel: ArticleViewModel = hiltViewModel(),
     onBackButtonClick: () -> Unit
 ) {
+    viewModel.loadState("1")
     val state by viewModel.state.collectAsState()
 
-    Column(
-        modifier = modifier
-            .fillMaxSize()
-            .background(color = DevAssistantTheme.colors.appBackground),
-        verticalArrangement = Arrangement.SpaceAround
-    ) {
-        DevAssistantHeader(
-            showBackButton = true,
-            title = state.title,
-            subTitle = "${state.duration} мин",
-            background = DevAssistantGradient.purple(),
-            onBackButtonClick = onBackButtonClick
-        )
+    if (state.isLoading) {
         Column(
-            modifier = Modifier.weight(1f)
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            Column(
-                modifier = Modifier
-                    .verticalScroll(rememberScrollState())
-                    .fillMaxWidth()
-                    .padding(20.dp)
-                    .border(
-                        width = 1.dp,
-                        color = DevAssistantTheme.colors.appCardColor.border,
-                        shape = RoundedCornerShape(10.dp)
-                    )
-                    .background(
-                        color = DevAssistantTheme.colors.appCardColor.background,
-                        shape = RoundedCornerShape(size = 10.dp)
-                    )
-            ) {
-                //todo: move article title to model
-                Text(
-                    modifier = Modifier.padding(10.dp),
-                    text = "Переменные",
-                    fontSize = 18.sp,
-                    fontStyle = FontStyle.Italic,
-                    textDecoration = TextDecoration.Underline,
-                    color = DevAssistantTheme.colors.textColor
-                )
-                Text(
-                    modifier = Modifier.padding(10.dp),
-                    text = state.content,
-                    color = DevAssistantTheme.colors.textColor
-                )
-            }
+            Text(
+                text = "Loading...",
+                color = DevAssistantTheme.colors.textTitle,
+                fontSize = 16.sp
+            )
         }
+    } else {
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .background(color = DevAssistantTheme.colors.appBackground),
+            verticalArrangement = Arrangement.SpaceAround
+        ) {
+            DevAssistantHeader(
+                showBackButton = true,
+                title = state.title,
+                subTitle = "${state.duration} мин",
+                background = DevAssistantGradient.purple(),
+                onBackButtonClick = onBackButtonClick
+            )
+            Column(
+                modifier = Modifier.weight(1f)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .verticalScroll(rememberScrollState())
+                        .fillMaxWidth()
+                        .padding(20.dp)
+                        .border(
+                            width = 1.dp,
+                            color = DevAssistantTheme.colors.appCardColor.border,
+                            shape = RoundedCornerShape(10.dp)
+                        )
+                        .background(
+                            color = DevAssistantTheme.colors.appCardColor.background,
+                            shape = RoundedCornerShape(size = 10.dp)
+                        )
+                ) {
+                    //todo: move article title to model
+                    Text(
+                        modifier = Modifier.padding(10.dp),
+                        text = state.title,
+                        fontSize = 18.sp,
+                        fontStyle = FontStyle.Italic,
+                        textDecoration = TextDecoration.Underline,
+                        color = DevAssistantTheme.colors.textColor
+                    )
+                    Text(
+                        modifier = Modifier.padding(10.dp),
+                        text = state.content,
+                        color = DevAssistantTheme.colors.textColor
+                    )
+                }
+            }
 
-        AdaptiveButton(
-            modifier = Modifier
-                .padding(20.dp)
-                .align(alignment = Alignment.End),
-            buttonText = stringResource(com.example.theory.R.string.lesson_completed),
-            isGradient = true,
-            isEnable = false,
-            onClick = onBackButtonClick
-        )
+            AdaptiveButton(
+                modifier = Modifier
+                    .padding(20.dp)
+                    .align(alignment = Alignment.End),
+                buttonText = stringResource(com.example.theory.R.string.lesson_completed),
+                isGradient = true,
+                isEnable = false,
+                onClick = onBackButtonClick
+            )
+        }
     }
 }
 

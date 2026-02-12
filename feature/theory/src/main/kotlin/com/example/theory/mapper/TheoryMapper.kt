@@ -11,8 +11,10 @@ import androidx.compose.material.icons.filled.Warning
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.devassistantai.domain.model.profile.Statistics
+import com.devassistantai.domain.model.theory.Article
 import com.devassistantai.domain.model.theory.Subject
 import com.devassistantai.domain.model.theory.Topic
+import com.example.theory.presentation.article.model.ArticleModel
 import com.example.theory.presentation.subject.model.StatisticsModel
 import com.example.theory.presentation.subject.model.SubjectModel
 import com.example.theory.presentation.topic.model.TopicModel
@@ -50,6 +52,18 @@ fun List<Topic>.toTopicModel(): List<TopicModel> {
         )
     }
 }
+
+fun Article.toArticleModel(): ArticleModel {
+    return ArticleModel(
+        id = this.id,
+        topicId = this.topicId,
+        topicTitle = this.topicTitle,
+        topicDuration = this.topicDuration,
+        content = this.content
+    )
+}
+
+
 
 fun getImageVectorFromString(name: String): ImageVector = when (name) {
     "Home" -> Icons.Default.Home
