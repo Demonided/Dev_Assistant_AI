@@ -12,17 +12,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.devassistantai.presentation.navigation.ChatAI
-import com.example.devassistantai.presentation.navigation.Profile
-import com.example.devassistantai.presentation.navigation.Quiz
-import com.example.devassistantai.presentation.navigation.Settings
-import com.example.devassistantai.presentation.navigation.Theory
+import androidx.navigation3.runtime.NavKey
+import com.example.devassistantai.presentation.navigation.nav3.routes.AccountNavKey
+import com.example.devassistantai.presentation.navigation.nav3.routes.ChatAINavKey
+import com.example.devassistantai.presentation.navigation.nav3.routes.QuizNavKey
+import com.example.devassistantai.presentation.navigation.nav3.routes.SettingsNavKey
+import com.example.devassistantai.presentation.navigation.nav3.routes.theory.ArticleNavKey
+import com.example.devassistantai.presentation.navigation.nav3.routes.theory.SubjectNavKey
+import com.example.devassistantai.presentation.navigation.nav3.routes.theory.TopicNavKey
 import com.example.ui_theme.R
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
 fun CustomNavBar(
-    currentRoute: String?,
+    currentRoute: NavKey,
     onTheoryClick: () -> Unit,
     onQuizClick: () -> Unit,
     onMessageAIClick: () -> Unit,
@@ -46,27 +49,27 @@ fun CustomNavBar(
         ) {
             NavBarItems(
                 icon = R.drawable.icon_theory,
-                isSelected = currentRoute == Theory.route,
+                isSelected = currentRoute is SubjectNavKey || currentRoute is TopicNavKey || currentRoute is ArticleNavKey,
                 onClick = onTheoryClick,
             )
             NavBarItems(
                 icon = R.drawable.icon_quiz,
-                isSelected = currentRoute == Quiz.route,
+                isSelected = currentRoute is QuizNavKey,
                 onClick = onQuizClick,
             )
             NavBarItems(
                 icon = R.drawable.icon_message,
-                isSelected = currentRoute == ChatAI.route,
+                isSelected = currentRoute is ChatAINavKey,
                 onClick = onMessageAIClick,
             )
             NavBarItems(
                 icon = R.drawable.icon_profile,
-                isSelected = currentRoute == Profile.route,
+                isSelected = currentRoute is AccountNavKey,
                 onClick = onProfileClick,
             )
             NavBarItems(
                 icon = R.drawable.icon_setting,
-                isSelected = currentRoute == Settings.route,
+                isSelected = currentRoute is SettingsNavKey,
                 onClick = onSettingsClick,
             )
         }
@@ -77,7 +80,7 @@ fun CustomNavBar(
 @Composable
 fun CustomNavBarPreview() {
     CustomNavBar(
-        currentRoute = Theory.route,
+        currentRoute = SubjectNavKey,
         onTheoryClick = {},
         onQuizClick = {},
         onMessageAIClick = {},

@@ -31,9 +31,10 @@ fun DevAssistantScreen(
 
     Scaffold(
         bottomBar = {
-            if (devAssistantBottomTabRowScreens.contains(currentRoute(navController = navController))) {
-                CustomBottomBar(navController = navController)
-            }
+            CustomBottomBar(
+                currentRoute = navigationState.topLevelRoute,
+                navigator = navigator
+            )
         },
         contentColor = Color.Transparent
     ) { paddingValues ->
