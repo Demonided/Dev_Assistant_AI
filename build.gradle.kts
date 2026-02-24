@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.kotlin.ksp) apply false
     alias(libs.plugins.detekt)
     alias(libs.plugins.jetbrains.kotlin.jvm) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
 }
 
 tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
