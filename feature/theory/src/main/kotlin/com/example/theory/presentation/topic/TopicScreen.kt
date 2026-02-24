@@ -32,13 +32,14 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
 fun TopicScreen(
+    subjectId: String,
     viewModel: TopicViewModel = hiltViewModel(),
     onTopicCLick: (String) -> Unit,
     onBackButtonClick: () -> Unit
 ) {
     val subjectTitle = "Kotlin"
     val subjectDescription = "Kotlin language"
-    viewModel.loadData("1", subjectTitle = subjectTitle, subjectDescription = subjectDescription)
+    viewModel.loadData(subjectId = subjectId, subjectTitle = subjectTitle, subjectDescription = subjectDescription)
 
     val state by viewModel.state.collectAsState()
 
@@ -109,6 +110,7 @@ fun TopicScreen(
 private fun TopicScreenPreview() {
     DevAssistantAITheme {
         TopicScreen(
+            subjectId = "1",
             onTopicCLick = {},
             onBackButtonClick = {}
         )

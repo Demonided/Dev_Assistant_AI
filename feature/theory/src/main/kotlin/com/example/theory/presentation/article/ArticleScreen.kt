@@ -32,11 +32,12 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
 fun ArticleScreen(
+    topicId: String,
     modifier: Modifier = Modifier,
     viewModel: ArticleViewModel = hiltViewModel(),
     onBackButtonClick: () -> Unit
 ) {
-    viewModel.loadState("1")
+    viewModel.loadState(topicId)
     val state by viewModel.state.collectAsState()
 
     if (state.isLoading) {
@@ -118,6 +119,6 @@ fun ArticleScreen(
 @Composable
 fun ArticleScreenPreview() {
     DevAssistantAITheme {
-        ArticleScreen {}
+        ArticleScreen(topicId = "1") {}
     }
 }
