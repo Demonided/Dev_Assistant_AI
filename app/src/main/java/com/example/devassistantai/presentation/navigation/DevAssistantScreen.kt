@@ -10,11 +10,11 @@ import androidx.navigation3.ui.NavDisplay
 import com.example.devassistantai.presentation.navigation.nav3.EntryProvider
 import com.example.devassistantai.presentation.navigation.nav3.Navigator
 import com.example.devassistantai.presentation.navigation.nav3.rememberAppNavigationState
-import com.example.devassistantai.presentation.navigation.nav3.routes.AccountNavKey
-import com.example.devassistantai.presentation.navigation.nav3.routes.ChatAINavKey
-import com.example.devassistantai.presentation.navigation.nav3.routes.QuizNavKey
-import com.example.devassistantai.presentation.navigation.nav3.routes.SettingsNavKey
-import com.example.devassistantai.presentation.navigation.nav3.routes.theory.SubjectNavKey
+import com.example.devassistantai.presentation.navigation.nav3.routes.AccountRoute
+import com.example.devassistantai.presentation.navigation.nav3.routes.ChatAIRoute
+import com.example.devassistantai.presentation.navigation.nav3.routes.QuizRoute
+import com.example.devassistantai.presentation.navigation.nav3.routes.SettingsRoute
+import com.example.devassistantai.presentation.navigation.nav3.routes.theory.SubjectRoute
 import com.example.devassistantai.presentation.navigation.nav3.toEntries
 import com.example.devassistantai.presentation.navigation.navbar.CustomBottomBar
 
@@ -23,8 +23,8 @@ fun DevAssistantScreen(
     modifier: Modifier = Modifier
 ) {
     val navigationState = rememberAppNavigationState(
-        startRoute = SubjectNavKey,
-        topLevelRoutes = setOf(SubjectNavKey, QuizNavKey, ChatAINavKey, AccountNavKey, SettingsNavKey)
+        startRoute = SubjectRoute,
+        topLevelRoutes = setOf(SubjectRoute, QuizRoute, ChatAIRoute, AccountRoute, SettingsRoute)
     )
     val navigator = remember { Navigator(navigationState) }
 

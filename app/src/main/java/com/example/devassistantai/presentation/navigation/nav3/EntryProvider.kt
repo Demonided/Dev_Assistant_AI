@@ -2,13 +2,13 @@ package com.example.devassistantai.presentation.navigation.nav3
 
 import androidx.navigation3.runtime.entryProvider
 import com.example.ai_chat.ChatAIScreen
-import com.example.devassistantai.presentation.navigation.nav3.routes.AccountNavKey
-import com.example.devassistantai.presentation.navigation.nav3.routes.ChatAINavKey
-import com.example.devassistantai.presentation.navigation.nav3.routes.QuizNavKey
-import com.example.devassistantai.presentation.navigation.nav3.routes.SettingsNavKey
-import com.example.devassistantai.presentation.navigation.nav3.routes.theory.ArticleNavKey
-import com.example.devassistantai.presentation.navigation.nav3.routes.theory.SubjectNavKey
-import com.example.devassistantai.presentation.navigation.nav3.routes.theory.TopicNavKey
+import com.example.devassistantai.presentation.navigation.nav3.routes.AccountRoute
+import com.example.devassistantai.presentation.navigation.nav3.routes.ChatAIRoute
+import com.example.devassistantai.presentation.navigation.nav3.routes.QuizRoute
+import com.example.devassistantai.presentation.navigation.nav3.routes.SettingsRoute
+import com.example.devassistantai.presentation.navigation.nav3.routes.theory.ArticleRoute
+import com.example.devassistantai.presentation.navigation.nav3.routes.theory.SubjectRoute
+import com.example.devassistantai.presentation.navigation.nav3.routes.theory.TopicRoute
 import com.example.profile.ProfileScreen
 import com.example.settings.SettingsScreen
 import com.example.tests.presentation.QuizRoute
@@ -20,28 +20,28 @@ class EntryProvider() {
     companion object {
         fun getProvider(navigator: Navigator) =
             entryProvider {
-                entry<SubjectNavKey> {
+                entry<SubjectRoute> {
                     SubjectScreen(
-                        onSubjectClick = { subjectId -> navigator.navigate(TopicNavKey(subjectId = subjectId)) }
+                        onSubjectClick = { subjectId -> navigator.navigate(TopicRoute(subjectId = subjectId)) }
                     )
                 }
-                entry<TopicNavKey> { key ->
+                entry<TopicRoute> { key ->
                     TopicScreen(
                         subjectId = key.subjectId,
-                        onTopicCLick = { topicId -> navigator.navigate(ArticleNavKey(topicId = topicId)) },
+                        onTopicCLick = { topicId -> navigator.navigate(ArticleRoute(topicId = topicId)) },
                         onBackButtonClick = { navigator.goBack() }
                     )
                 }
-                entry<ArticleNavKey> { key ->
+                entry<ArticleRoute> { key ->
                     ArticleScreen(
                         topicId = key.topicId,
                         onBackButtonClick = { navigator.goBack() }
                     )
                 }
-                entry<QuizNavKey> { QuizRoute() }
-                entry<ChatAINavKey> { ChatAIScreen() }
-                entry<AccountNavKey> { ProfileScreen() }
-                entry<SettingsNavKey> { SettingsScreen() }
+                entry<QuizRoute> { QuizRoute() }
+                entry<ChatAIRoute> { ChatAIScreen() }
+                entry<AccountRoute> { ProfileScreen() }
+                entry<SettingsRoute> { SettingsScreen() }
             }
     }
 }

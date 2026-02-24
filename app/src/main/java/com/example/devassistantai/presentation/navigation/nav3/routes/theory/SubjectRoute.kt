@@ -4,4 +4,4 @@ import androidx.navigation3.runtime.NavKey
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ArticleNavKey(val topicId: String) : NavKey
+data object SubjectRoute : NavKey
