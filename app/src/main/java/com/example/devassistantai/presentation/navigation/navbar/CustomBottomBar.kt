@@ -3,12 +3,12 @@ package com.example.devassistantai.presentation.navigation.navbar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.NavKey
+import com.example.devassistantai.presentation.navigation.nav3.AppRoutes.AccountRoutes
+import com.example.devassistantai.presentation.navigation.nav3.AppRoutes.ChatAIRoutes
+import com.example.devassistantai.presentation.navigation.nav3.AppRoutes.QuizRoutes
+import com.example.devassistantai.presentation.navigation.nav3.AppRoutes.SettingsRoutes
+import com.example.devassistantai.presentation.navigation.nav3.AppRoutes.TheoryRoutes.SubjectRoutes
 import com.example.devassistantai.presentation.navigation.nav3.Navigator
-import com.example.devassistantai.presentation.navigation.nav3.routes.AccountRoute
-import com.example.devassistantai.presentation.navigation.nav3.routes.ChatAIRoute
-import com.example.devassistantai.presentation.navigation.nav3.routes.QuizRoute
-import com.example.devassistantai.presentation.navigation.nav3.routes.SettingsRoute
-import com.example.devassistantai.presentation.navigation.nav3.routes.theory.SubjectRoute
 
 @Composable
 fun CustomBottomBar(
@@ -17,11 +17,11 @@ fun CustomBottomBar(
 ) {
     CustomNavBar(
         currentRoute = currentRoute,
-        onTheoryClick = { navigator.navigate(route = SubjectRoute) },
-        onQuizClick = { navigator.navigate(route = QuizRoute) },
-        onMessageAIClick = { navigator.navigate(route = ChatAIRoute) },
-        onProfileClick = { navigator.navigate(route = AccountRoute) },
-        onSettingsClick = { navigator.navigate(route = SettingsRoute) },
+        onTheoryClick = { navigator.navigate(route = SubjectRoutes) },
+        onQuizClick = { navigator.navigate(route = QuizRoutes) },
+        onMessageAIClick = { navigator.navigate(route = ChatAIRoutes) },
+        onProfileClick = { navigator.navigate(route = AccountRoutes) },
+        onSettingsClick = { navigator.navigate(route = SettingsRoutes) },
         modifier = Modifier
     )
 }

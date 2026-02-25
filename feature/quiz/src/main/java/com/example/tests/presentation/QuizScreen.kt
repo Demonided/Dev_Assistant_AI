@@ -18,13 +18,13 @@ import com.example.tests.domain.model.QuestionWitchAnswer
 import com.example.tests.domain.model.QuizProgressUiModel
 import com.example.tests.presentation.ui.components.card.CardWithQuestionChoosingAnswer
 import com.example.tests.presentation.ui.quizbar.TopQuizBar
+import com.example.ui_theme.R
 import com.example.ui_theme.component.AdaptiveButton
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
-import com.example.ui_theme.R
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
-fun QuizRoute() {
+fun QuizScreen() {
     val listQuestion = listOf(
         QuestionWitchAnswer(
             question = "Что такое Activity в Android?",
