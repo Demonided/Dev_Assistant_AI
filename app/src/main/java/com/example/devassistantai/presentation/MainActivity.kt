@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
 import com.example.devassistantai.presentation.navigation.DevAssistantScreen
-import com.example.devassistantai.presentation.navigation.Theory
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,9 +22,7 @@ class MainActivity : ComponentActivity() {
                 Box(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    DevAssistantScreen(
-                        startDestination = Theory.route
-                    )
+                    DevAssistantScreen()
                 }
             }
         }
