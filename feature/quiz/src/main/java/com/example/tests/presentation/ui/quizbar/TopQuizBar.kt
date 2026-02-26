@@ -75,7 +75,7 @@ fun TopQuizBar(
                 Icon(
                     painter = painterResource(id = R.drawable.icon_bookmark_plus),
                     contentDescription = null,
-                    tint = DevAssistantTheme.colors.whiteBlack,
+                    tint = DevAssistantTheme.colors.white,
                     modifier = Modifier
                         .size(34.dp)
                         .padding(8.dp)
