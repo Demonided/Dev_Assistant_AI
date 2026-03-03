@@ -15,6 +15,7 @@ data class DevAssistantColor(
     val appEndGradient: Color,
     val appBackground: Color,
     val appCardBackground: Color,
+    val messageBackground: Color,
 
     val purpleStartGradientColor: Color,
     val purpleEndGradientColor: Color,
