@@ -23,11 +23,11 @@ fun Modifier.angleLinearGradient(
                 colors = colors,
                 start = Offset(
                     size.width / 2 - x,
-                    size.height / 2 - y
+                    size.height / 1 - y
                 ),
                 end = Offset(
                     size.width / 2 + x,
-                    size.height / 2 + y
+                    size.height / 1 + y
                 )
             )
         )

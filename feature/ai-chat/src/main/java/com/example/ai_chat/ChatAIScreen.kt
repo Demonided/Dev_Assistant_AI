@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.ai_chat.ui.header.ChatHeader
+import com.example.ai_chat.ui.message.ChatIcon
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
@@ -24,7 +25,7 @@ fun ChatAIScreen() {
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
-
+            ChatIcon()
         }
     }
 }
