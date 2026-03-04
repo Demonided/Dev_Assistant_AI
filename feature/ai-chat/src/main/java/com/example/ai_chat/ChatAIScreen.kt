@@ -33,7 +33,7 @@ fun ChatAIScreen() {
             MessageItem(
                 message = MessageModel(
                     id = "1",
-                    text = "Hello android",
+                    text = "Привет! Я AI-помощник для подготовки к собеседованию по Android. Задавай любые вопросы о разработке!",
                     "16:40",
                     false
                 )
@@ -42,7 +42,7 @@ fun ChatAIScreen() {
             MessageItem(
                 message = MessageModel(
                     id = "1",
-                    text = "Hello from user",
+                    text = "Расскажи мне пожалуйста всё о корутинах. Приведи поясняющие примеры.",
                     "16:41",
                     true
                 )

@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,15 +24,17 @@ fun MessageItem(
         modifier = Modifier
             .padding(top = 10.dp, bottom = 10.dp)
             .fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween
+        verticalAlignment = Alignment.Top,
+        horizontalArrangement = if (message.isFromUser) Arrangement.End else Arrangement.Start
     ) {
         if (message.isFromUser) {
             Message(
                 modifier = Modifier
-                    .padding(end = 16.dp)
-                    .weight(1f),
-                text = "Hello",
-                time = "15:40",
+                    .fillMaxWidth()
+                    .weight(1f)
+                    .padding(start = 58.dp, end = 16.dp),
+                text = message.text,
+                time = message.time,
                 isFromUser = true
             )
             ChatIcon(isUserIcon = true)
@@ -39,10 +42,9 @@ fun MessageItem(
             ChatIcon(isUserIcon = false)
             Message(
                 modifier = Modifier
-                    .padding(start = 16.dp)
-                    .weight(1f),
-                text = "Hello",
-                time = "15:40",
+                    .padding(start = 16.dp, end = 58.dp),
+                text = message.text,
+                time = message.time,
                 isFromUser = false
             )
         }
@@ -62,16 +64,15 @@ fun MessageItemPreview() {
             MessageItem(
                 message = MessageModel(
                     id = "1",
-                    text = "Hello from user",
+                    text = "Привет! Я AI-помощник для подготовки к собеседованию по Android. Задавай любые вопросы о разработке!",
                     "16:41",
                     false
                 )
             )
-
             MessageItem(
                 message = MessageModel(
                     id = "1",
-                    text = "Hello from user",
+                    text = "Расскажи мне пожалуйста всё о корутинах. Приведи поясняющие примеры.",
                     "16:41",
                     true
                 )

@@ -778,7 +778,7 @@ style:
 
 libraries:
   # Выключено, потому что наши core-модули могут выставлять наружу data class-ы
-    ForbiddenPublicDataClass:
+    ForbiddenPublicDataCla
         active: false
         excludes: [ '**' ]
         ignorePackages: [ '*.internal', '*.internal.*' ]
@@ -788,5 +788,5 @@ libraries:
     # Выключено, потому что наши core-модули могут выставлять наружу свои классы,
     # не закрытые интерфейсами
     LibraryEntitiesShouldNotBePublic:
-        active: false
+        active: fals
         excludes: [ '**' ]
