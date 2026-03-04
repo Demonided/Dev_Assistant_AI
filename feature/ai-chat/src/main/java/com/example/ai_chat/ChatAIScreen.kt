@@ -25,9 +25,11 @@ fun ChatAIScreen() {
     ) {
         ChatHeader()
         Column(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(start = 22.dp, end = 22.dp)
         ) {
-            ChatIcon()
+            MessageItem()
         }
     }
 }

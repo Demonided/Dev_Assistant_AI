@@ -20,7 +20,6 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 @Composable
 fun Message(
     text: String,
-    isFromUser: Boolean,
     time: String,
     modifier: Modifier = Modifier,
 ) {
@@ -51,7 +50,6 @@ fun MessagePreview() {
         Box(modifier = Modifier.padding(10.dp)) {
             Message(
                 text = "Привет! Я AI-помощник для подготовки к собеседованию по Android. Задавай любые вопросы о разработке!",
-                isFromUser = false,
                 time = "16:46"
             )
         }
