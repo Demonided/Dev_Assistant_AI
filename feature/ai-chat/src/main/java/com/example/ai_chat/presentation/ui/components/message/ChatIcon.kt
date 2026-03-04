@@ -1,4 +1,4 @@
-package com.example.ai_chat.ui.message
+package com.example.ai_chat.presentation.ui.components.message
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size

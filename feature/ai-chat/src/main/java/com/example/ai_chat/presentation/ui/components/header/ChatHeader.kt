@@ -1,4 +1,4 @@
-package com.example.ai_chat.ui.header
+package com.example.ai_chat.presentation.ui.components.header
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row

@@ -5,11 +5,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.ai_chat.ui.header.ChatHeader
-import com.example.ai_chat.ui.message.ChatIcon
+import androidx.compose.ui.unit.dp
+import com.example.ai_chat.presentation.ui.components.header.ChatHeader
+import com.example.ai_chat.presentation.ui.components.message.item.MessageItem
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 

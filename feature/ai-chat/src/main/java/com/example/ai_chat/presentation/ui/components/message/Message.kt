@@ -1,4 +1,4 @@
-package com.example.ai_chat.ui.message
+package com.example.ai_chat.presentation.ui.components.message
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
