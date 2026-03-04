@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ai_chat.presentation.model.MessageModel
+import com.example.ai_chat.presentation.ui.components.chat.MessageItem
 import com.example.ai_chat.presentation.ui.components.header.ChatHeader
-import com.example.ai_chat.presentation.ui.components.message.MessageItem
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
