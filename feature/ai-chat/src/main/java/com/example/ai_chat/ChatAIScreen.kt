@@ -10,8 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.ai_chat.presentation.model.MessageModel
 import com.example.ai_chat.presentation.ui.components.header.ChatHeader
-import com.example.ai_chat.presentation.ui.components.message.item.MessageItem
+import com.example.ai_chat.presentation.ui.components.message.MessageItem
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
 import com.example.ui_theme.ui.theme.DevAssistantTheme
 
@@ -29,7 +30,23 @@ fun ChatAIScreen() {
                 .fillMaxSize()
                 .padding(start = 22.dp, end = 22.dp)
         ) {
-            MessageItem()
+            MessageItem(
+                message = MessageModel(
+                    id = "1",
+                    text = "Hello android",
+                    "16:40",
+                    false
+                )
+            )
+
+            MessageItem(
+                message = MessageModel(
+                    id = "1",
+                    text = "Hello from user",
+                    "16:41",
+                    true
+                )
+            )
         }
     }
 }
