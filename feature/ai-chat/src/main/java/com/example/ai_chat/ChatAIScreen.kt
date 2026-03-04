@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ai_chat.presentation.model.MessageModel
+import com.example.ai_chat.presentation.ui.components.chat.MessageInput
 import com.example.ai_chat.presentation.ui.components.chat.MessageItem
 import com.example.ai_chat.presentation.ui.components.header.ChatHeader
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
@@ -27,8 +28,8 @@ fun ChatAIScreen() {
         ChatHeader()
         Column(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(start = 22.dp, end = 22.dp)
+                .weight(1f)
+                .padding(start = 22.dp, end = 22.dp),
         ) {
             MessageItem(
                 message = MessageModel(
@@ -47,6 +48,11 @@ fun ChatAIScreen() {
                     true
                 )
             )
+        }
+        Column(
+            modifier = Modifier.padding(start = 22.dp, end = 22.dp, bottom = 16.dp),
+        ) {
+            MessageInput("", onValueChange = {})
         }
     }
 }

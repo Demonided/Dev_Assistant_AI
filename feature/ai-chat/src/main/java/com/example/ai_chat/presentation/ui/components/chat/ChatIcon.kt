@@ -37,9 +37,7 @@ fun ChatIcon(
             ),
         shape = RoundedCornerShape(12.dp),
         color = DevAssistantTheme.colors.white.copy(alpha = 0.1f),
-
-
-        ) {
+    ) {
         Icon(
             painter = painterResource(id = if (!isUserIcon) R.drawable.icon_chat_bot else R.drawable.user),
             contentDescription = null,
