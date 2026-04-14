@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -19,6 +21,7 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 
 @Composable
 fun ChatAIScreen() {
+    val message = remember { mutableStateOf("") }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -29,7 +32,7 @@ fun ChatAIScreen() {
         Column(
             modifier = Modifier
                 .weight(1f)
-                .padding(start = 22.dp, end = 22.dp),
+                .padding(start = 16.dp, end = 16.dp),
         ) {
             MessageItem(
                 message = MessageModel(
@@ -52,7 +55,11 @@ fun ChatAIScreen() {
         Column(
             modifier = Modifier.padding(start = 22.dp, end = 22.dp, bottom = 16.dp),
         ) {
-            MessageInput("", onValueChange = {})
+            MessageInput(
+                value = message.value,
+                onValueChange = { message.value = it },
+                onMessageSend = {}
+            )
         }
     }
 }

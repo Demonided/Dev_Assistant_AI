@@ -2,6 +2,8 @@
     <string name="app_name">ui-theme</string>
 
     // Button
-    <string name="button_back">Назад</string>
-    <string name="button_next">Дальше</string>
+    <string name="button_back">Previous</string>
+    <string name="button_next">Next</string>
+    //Placeholder
+    <string name="ask_question_placeholder">Ask question...</string>
 </resources>

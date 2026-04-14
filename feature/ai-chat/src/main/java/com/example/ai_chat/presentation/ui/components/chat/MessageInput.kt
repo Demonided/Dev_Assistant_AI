@@ -2,17 +2,17 @@ package com.example.ai_chat.presentation.ui.components.chat
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -21,13 +21,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.focus.onFocusChanged
-import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.ui_theme.R
 import com.example.ui_theme.extantion.angleLinearGradient
 import com.example.ui_theme.ui.theme.DevAssistantAITheme
@@ -38,33 +36,30 @@ import com.example.ui_theme.ui.theme.DevAssistantTheme
 fun MessageInput(
     value: String,
     onValueChange: (String) -> Unit,
+    onMessageSend: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     var isFocused by remember { mutableStateOf(false) }
-
+    var isButtonActive by remember { mutableStateOf(false) }
     Row(
         modifier = modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        BasicTextField(
-            value = "",
-            onValueChange = onValueChange,
-            singleLine = true,
-            textStyle = TextStyle(
-                color = DevAssistantTheme.colors.white,
-                fontSize = 14.sp,
-                lineHeight = 24.sp
-            ),
-            cursorBrush = SolidColor(DevAssistantTheme.colors.white),
+        OutlinedTextField(
+            shape = RoundedCornerShape(16.dp),
             modifier = Modifier
-                .height(46.dp)
                 .weight(1f)
-                .onFocusChanged { isFocused = it.isFocused }
-                .border(
-                    width = 1.dp,
-                    color = DevAssistantTheme.colors.appCardColor.border,
+                .background(
+                    color = DevAssistantTheme.colors.messageBackground,
                     shape = RoundedCornerShape(16.dp)
-                )
+                ),
+            value = value,
+            placeholder = { Text(text = stringResource(R.string.ask_question_placeholder)) },
+            onValueChange = onValueChange,
+            enabled = true,
+            maxLines = 5,
+            textStyle = TextStyle(color = DevAssistantTheme.colors.textColor)
         )
 
         IconButton(
@@ -75,7 +70,8 @@ fun MessageInput(
                     colors = DevAssistantGradient.primary(),
                     angle = 60f
                 ),
-            onClick = {}
+            onClick = { },
+            enabled = isButtonActive
         ) {
             Icon(
                 painter = painterResource(id = R.drawable.icon_send),
@@ -98,13 +94,13 @@ fun MessageInputPreview() {
         Box(
             modifier = Modifier
                 .background(DevAssistantTheme.colors.appBackground)
-                .padding(10.dp)
+                .padding(start = 10.dp, top = 10.dp, bottom = 10.dp)
         ) {
             MessageInput(
                 value = "",
-                onValueChange = {}
+                onValueChange = {},
+                onMessageSend = {}
             )
         }
-
     }
 }
