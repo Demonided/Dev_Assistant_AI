@@ -6,16 +6,19 @@ import com.example.ui_theme.ui.theme.color.DevAssistantColor.Quiz
 
 val LightDevAssistantColorScheme = DevAssistantColor(
     white = Color(0xFFFFFFFF),
+    gray = Color(0xFFCACACA),
     black = Color(0xFF181818),
     blackWhite = Color(0xFF000000),
     whiteBlack = Color(0xFFFFFFFF),
     textTitle = Color(0xFF000000),
-    textColor = Color(0xFF4A5565),
+    textColor = Color(0xFF101828),
     appStartGradient = Color(0xFFB649F3),
     appMediumGradientColor = Color(0xFFF6339A),
     appEndGradient = Color(0xFFFF6900),
     appBackground = Color(0xFFFFFFFF),
     appCardBackground = Color(0xFFF1F1F1),
+    messageBackground = Color(0xFFE5E5E5),
+    userChatIconBackground = Color(0xFFD1D5Dc),
 
     purpleStartGradientColor = Color(0xFF9810FA),
     purpleEndGradientColor = Color(0xFFAD46FF),

@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.Color
 
 data class DevAssistantColor(
     val white: Color,
+    val gray: Color,
     val black: Color,
     val blackWhite: Color,
     val whiteBlack: Color,
@@ -15,6 +16,8 @@ data class DevAssistantColor(
     val appEndGradient: Color,
     val appBackground: Color,
     val appCardBackground: Color,
+    val messageBackground: Color,
+    val userChatIconBackground: Color,
 
     val purpleStartGradientColor: Color,
     val purpleEndGradientColor: Color,
